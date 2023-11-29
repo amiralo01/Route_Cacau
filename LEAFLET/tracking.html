@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
 
     <script src="node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="firebase.js"></script>
     
     <style>
         #map{
             height: 400px;
         }
 
-        .body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+        body {
+            margin-right: 10%;
+            margin-left: 10%;
         }
 
         .info-container {
@@ -116,15 +117,42 @@
 
         map.on('click', onMapClick);
 
+        var imageV, nameV, regionV, descriptionV, cocoaV;
+
+        function readsupplierinfo(){
+            imageV = document.getElementById("imgFncd").value;
+            nameV = document.getElementById("NameF").value;
+            regionV = document.getElementById("Region").value;
+            descriptionV = document.getElementById("Description").value;
+            cocoaV = document.getElementById("CocoaType").value;
+            console.log(imageV, nameV, regionV, descriptionV, cocoaV);
+        }
+
+        /*document.getElementById("read").onclick = function(){
+            readsupplierinfo();
+
+            firebase
+                .database()
+                .ref("Informacao/" + )
+                .on("value", function(snap){
+                    document.getElementById("imgFncd").value = snap.val().imageV;
+
+                })
+        }*/
     </script>
 
+    <div class="button">
+        <button id="read">Read</button>
+    </div>
+
     <div class="info-container">
-        <div class="supplier-info">
-            <img src="caminho/para/imagem-fornecedor.jpg" alt="Imagem do Fornecedor">
-            <h2>Nome do Fornecedor</h2>
-            <p>Região: <span class="region">Região do Fornecedor</span></p>
-            <p>Descrição: <span class="description">Descrição do Fornecedor</span></p>
-            <p>Tipo de Cacau: <span class="cocoa-type">Tipo de Cacau</span></p>
+        <div class="supplierinfo">
+            <img id="imgFncd" alt="Imagem do Fornecedor">
+            <h2>Nome do Fornecedor<input id="NameF" type="text"></h2>
+            <p>Região: <input id="Region" type="text"></p>
+            <p>Descrição: <input id="Description" type="text"></p>
+            <p>Tipo de Cacau: <input id="CocoaType" type="text"></p>
+        </div>
     </div>
 </body>
 </html>

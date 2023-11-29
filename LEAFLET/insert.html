@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Funcionario</title>
+
+    <script src="firebase.js"></script>
+    
+</head>
+<body>
+    <script>
+        var imageV, nameV, regionV, descriptionV, cocoaV;
+
+        function readsupplierinfo(){
+            imageV = document.getElementById("imgFncd").value;
+            nameV = document.getElementById("NameF").value;
+            regionV = document.getElementById("Region").value;
+            descriptionV = document.getElementById("Description").value;
+            cocoaV = document.getElementById("CocoaType").value;
+            console.log(imageV, nameV, regionV, descriptionV, cocoaV);
+        }
+
+        document.getElementById("insert").onclick = function(){
+            supplierinfo();
+
+            firebase
+                .database()
+                .ref("Informacao/" + cocoaV)
+                .set({
+                    id: cocoaV,
+                    Nome: nameV,
+                    Foto: iamgeV,
+                    Regiao: regionV,
+                    Descricao: descriptionV,
+                });
+            alert("Data Inserted");
+            document.getElementById("CocoaType").value = "";
+            document.getElementById("NameF").value = "";
+            document.getElementById("imgFncd").value = "";
+            document.getElementById("Region").value = "";
+        };
+
+    </script>
+
+    <div class="button">
+        <button id="insert">Insert</button>
+        <button id="read">Read</button>
+    </div>
+
+    <div class="supplierinfo">
+        <img id="imgFncd" alt="Imagem do Fornecedor">
+        <h2>Nome do Fornecedor<input id="NameF" type="text"></h2>
+        <p>Região: <input id="Region" type="text"></p>
+        <p>Descrição: <input id="Description" type="text"></p>
+        <p>Tipo de Cacau: <input id="CocoaType" type="text"></p>
+    </div>
+</body>
+</html>
