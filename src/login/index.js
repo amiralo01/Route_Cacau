@@ -1,75 +1,87 @@
-  
+  import { GoogleAuthProvider } from "firebase/auth";
   import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-  function validar(){
-    const email = document.getElementById("login").value;
-    const password = document.getElementById("senha").value;
-    const auth = getAuth();
+  import { FacebookAuthProvider } from "firebase/auth";
+
+  const email = document.getElementById("login").value;
+  const password = document.getElementById("senha").value;
+  const auth = getAuth();
     
-    createUserWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
+      console.log('Usuário criado com sucesso:', user.uid);
+  })
+  .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      // ..
-    });
+      console.error('Erro ao criar usuário:', errorCode, errorMessage);
+  });
     
-    // Referência ao elemento de botão de login google
-    const loginButton = document.getElementById('butgoogle');
-    const logoutButton = document.getElementById('logout-button');
+  document.querySelector("login_google").addEventListener('click', () =>{
     
-    // Adicionar um ouvinte de evento de clique ao botão de login
-    loginButton.addEventListener('click', () => {
-      const provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
 
-    
-      // Realizar a autenticação com o Google
-      firebase.auth().signInWithPopup(provider)
+    firebase.auth().signInWithPopup(provider)
         .then((result) => {
-          // O usuário está autenticado com sucesso
-          const user = result.user;
-          console.log('Usuário autenticado:', user);
-          checkAuthentication();
+            const user = result.user;
+            console.log('Usuário autenticado com sucesso:', user);
         })
         .catch((error) => {
-          // Lidar com erros de autenticação
-          console.error('Erro ao autenticar:', error);
-        });
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error('Erro ao autenticar com o Google:', errorCode, errorMessage);
+        });   
+
+  });
+
+  document.querySelector("login_facebook").addEventListener('click', () =>{
+    
+    const provider = new FacebookAuthProvider();
+    
+    firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+            const user = result.user;
+            console.log('Usuário autenticado com sucesso:', user);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error('Erro ao autenticar com o Facebook:', errorCode, errorMessage);
+        });   
+
+  });
+  
+
+  // Adicionar um ouvinte de evento de clique ao botão de logout
+  logoutButton.addEventListener('click', () => {
+    // Realize o logout do usuário
+    firebase.auth().signOut().then(() => {
+      // O usuário fez logout com sucesso
+      console.log('Usuário deslogado');
+      checkAuthentication();
+    }).catch((error) => {
+      // Lidar com erros de logout
+      console.error('Erro ao fazer logout:', error);
     });
+  });
     
-    // Adicionar um ouvinte de evento de clique ao botão de logout
-    logoutButton.addEventListener('click', () => {
-      // Realize o logout do usuário
-      firebase.auth().signOut().then(() => {
-        // O usuário fez logout com sucesso
-        console.log('Usuário deslogado');
-        checkAuthentication();
-      }).catch((error) => {
-        // Lidar com erros de logout
-        console.error('Erro ao fazer logout:', error);
-      });
-    });
-    
-    // Função para verificar a autenticação atual
-    function checkAuthentication() {
-      // Verifique se o usuário está autenticado
-      const user = firebase.auth().currentUser;
-    
-      if (user) {
-        // O usuário está autenticado
-        loginButton.style.display = 'none';
-        logoutButton.style.display = 'block';
-      } else {
-        // O usuário não está autenticado
-        loginButton.style.display = 'block';
-        logoutButton.style.display = 'none';
-      }
+  // Função para verificar a autenticação atual
+  function checkAuthentication() {
+    // Verifique se o usuário está autenticado
+    const user = firebase.auth().currentUser;
+  
+    if (user) {
+      // O usuário está autenticado
+      loginButton.style.display = 'none';
+      logoutButton.style.display = 'block';
+    } else {
+      // O usuário não está autenticado
+      loginButton.style.display = 'block';
+      logoutButton.style.display = 'none';
     }
+  }
     
-  } 
 
   // Verifique a autenticação ao carregar a página
   checkAuthentication();
