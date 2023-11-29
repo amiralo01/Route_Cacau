@@ -22,6 +22,11 @@
     
     const provider = new GoogleAuthProvider();
 
+    provider.addScope('https://www.googleapis.com/auth/userinfo.profile');
+    provider.addScope('https://www.googleapis.com/auth/user.gender.read');
+    provider.addScope('https://www.googleapis.com/auth/user.birthday.read');
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
     firebase.auth().signInWithPopup(provider)
         .then((result) => {
             const user = result.user;
@@ -38,6 +43,9 @@
   document.querySelector("login_facebook").addEventListener('click', () =>{
     
     const provider = new FacebookAuthProvider();
+    provider.addScope('email');
+    provider.addScope('user_gender');
+    provider.addScope('user_birthday');
     
     firebase.auth().signInWithPopup(provider)
         .then((result) => {
