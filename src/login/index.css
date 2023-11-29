@@ -93,6 +93,10 @@ body {
   margin-bottom: 5px;
 }
 
+.botao:hover{
+  background: #966226;
+}
+
 .google-facebook{
   text-align: center;
   align-items: center;
