@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Login</title>
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap"/>
+        
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Login -->
+            <form action="" id="tela" method="POST" name="tela">
+                <legend> RouteCacau Login </legend>
+                <div class="input-dados">
+
+                    <label for="login">Login:</label>
+                    <input type="text" id="login" name="login" placeholder="Insira seu Login"/>
+
+                </div>
+
+
+                <div class="input-dados">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="Insira a senha" />
+                </div>
+
+                <div class="footer">
+                    <button type="button" class="botao"> Login </button>
+                </div>
+                
+
+                <div class="google-facebook">
+                    <button type="submit" class="butgoogle" aria-label="Login com o Google">
+                        <img src = "../../src/assets/img/icons8-google-48.png" style="max-width: 20px; max-height: 20px;">
+                    </button>
+                    <button type = "button" class="butfacebook" aria-label="Login com o Facebook">
+                        <img src="../../src/assets/img/icons8-facebook-48.png" style="max-width: 20px; max-height: 20px;">
+                    </button>
+                </div>
+                
+                <div class="link"> 
+                    <a class="recuperar" href="index.html"title="esqueceu a senha?" target="_Blank"> Esqueceu a senha?
+                    </a>
+                </div>
+
+                <div class="cadastrar"> 
+                    <a class="cadastro" href="index.html"title="Ainda não possui uma conta?" target="_Blank"> Criar conta
+                    </a>
+                </div>
+
+                
+            </form>
+    </div>
+  </body>
+  <script src="index.js"></script>
+  <script src="/src/services/firebaseConfig.js"></script>
+</html>
