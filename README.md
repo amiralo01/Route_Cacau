@@ -43,10 +43,9 @@ First you need to register in the system, after registering you need to log in a
 During the registration phase, you can also register using your Google data.
 
 Note: It is worth mentioning that information from suppliers is received directly from them into the database.
-
 # Commands needed to run the codes on your machine:
-* To be able to use the Leaflet tool, you must use the '''npm install leaflet''' command in your terminal to install the necessary dependencies on your machine.
-* To be able to use the Firebase database, you must use the '''npm install firebase''' command on your terminal to install the dependencies on your terminal.
+* To be able to use the Leaflet tool, you must use the ```npm install leaflet``` command in your terminal to install the necessary dependencies on your machine.
+* To be able to use the Firebase database, you must use the ```npm install firebase``` command on your terminal to install the dependencies on your terminal.
 
 # Tools 🔧
 
