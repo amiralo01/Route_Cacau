@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Login</title>
+        <link rel="stylesheet" href="../../src/login/index.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap"/>
+
+           
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Login -->
+            <form action="" id="tela" method="POST" name="tela">
+                <legend> RouteCacau Login </legend>
+                <div class="input-dados">
+
+                    <label for="login">Login:</label>
+                    <input type="text" id="login" name="login" placeholder="Insira seu Email"/>
+
+                </div>
+
+
+                <div class="input-dados">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="Insira a senha (min 6 dígitos)" />
+                </div>
+
+                <div class="footer">
+                    <button type="button" class="botao"> Login </button>
+                </div>
+                
+
+                <div class="google-facebook">
+                    <button type="button" class="butgoogle" id="login_google" aria-label="Login com o Google">
+                        <img src = "../../src/assets/img/icons8-google-48.png" style="max-width: 20px; max-height: 20px;">
+                    </button>
+                    <button type = "button" class="butfacebook" id="login_facebook" aria-label="Login com o Facebook">
+                        <img src="../../src/assets/img/icons8-facebook-48.png" style="max-width: 20px; max-height: 20px;">
+                    </button>
+                </div>
+                
+                <div class="link"> 
+                    <a class="recuperar" href="https://cacaurouter.firebaseapp.com/__/auth/action?mode=action&oobCode=code"title="esqueceu a senha?" target="_Blank"> Esqueceu a senha?
+                    </a>
+                </div>
+
+                <div class="cadastrar"> 
+                    <a class="cadastro" href="register.html"title="Ainda não possui uma conta?" target="_Blank"> Criar conta
+                    </a>
+                </div>
+
+                
+            </form>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
+        <script src="../../src/login/index.js"></script>
+        <script src="../../src/login/firebaseConfig.js"></script>
+ 
+    </body>
+</html>
