@@ -116,29 +116,6 @@
         }
 
         map.on('click', onMapClick);
-
-        var imageV, nameV, regionV, descriptionV, cocoaV;
-
-        function readsupplierinfo(){
-            imageV = document.getElementById("imgFncd").value;
-            nameV = document.getElementById("NameF").value;
-            regionV = document.getElementById("Region").value;
-            descriptionV = document.getElementById("Description").value;
-            cocoaV = document.getElementById("CocoaType").value;
-            console.log(imageV, nameV, regionV, descriptionV, cocoaV);
-        }
-
-        /*document.getElementById("read").onclick = function(){
-            readsupplierinfo();
-
-            firebase
-                .database()
-                .ref("Informacao/" + )
-                .on("value", function(snap){
-                    document.getElementById("imgFncd").value = snap.val().imageV;
-
-                })
-        }*/
     </script>
 
     <div class="button">

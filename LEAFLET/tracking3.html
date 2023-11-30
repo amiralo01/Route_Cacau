@@ -13,9 +13,9 @@
         #map{
             height: 400px;
         }
-        .body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+        body {
+            margin-right: 10%;
+            margin-left: 10%;
         }
 
         .info-container {
@@ -95,15 +95,18 @@
         
     </script>
 
-    <div class="info-container">
-        <div class="supplier-info">
-            <img src="caminho/para/imagem-fornecedor.jpg" alt="Imagem do Fornecedor">
-            <h2>Nome do Fornecedor</h2>
-            <p>Região: <span class="region">Região do Fornecedor</span></p>
-            <p>Descrição: <span class="description">Descrição do Fornecedor</span></p>
-            <p>Tipo de Cacau: <span class="cocoa-type">Tipo de Cacau</span></p>
-        </div>
+    <div class="button">
+        <button id="read">Read</button>
     </div>
 
+    <div class="info-container">
+        <div class="supplierinfo">
+            <img id="imgFncd" alt="Imagem do Fornecedor">
+            <h2>Nome do Fornecedor<input id="NameF" type="text"></h2>
+            <p>Região: <input id="Region" type="text"></p>
+            <p>Descrição: <input id="Description" type="text"></p>
+            <p>Tipo de Cacau: <input id="CocoaType" type="text"></p>
+        </div>
+    </div>
 </body>
 </html>

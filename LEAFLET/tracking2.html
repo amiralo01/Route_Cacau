@@ -8,14 +8,44 @@
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
 
     <script src="node_modules/leaflet/dist/leaflet.js"></script>
-    
+
     <style>
         #map{
             height: 400px;
         }
-        .body {
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
             margin: 0;
-            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        body {
+            margin-right: 10%;
+            margin-left: 10%;
         }
 
         .info-container {
@@ -47,6 +77,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="map"></div>
 
@@ -94,13 +125,18 @@
         
     </script>
 
+    <div class="button">
+        <button id="read">Read</button>
+    </div>
+
     <div class="info-container">
-        <div class="supplier-info">
-            <img src="caminho/para/imagem-fornecedor.jpg" alt="Imagem do Fornecedor">
-            <h2>Nome do Fornecedor</h2>
-            <p>Região: <span class="region">Região do Fornecedor</span></p>
-            <p>Descrição: <span class="description">Descrição do Fornecedor</span></p>
-            <p>Tipo de Cacau: <span class="cocoa-type">Tipo de Cacau</span></p>
+        <div class="supplierinfo">
+            <img id="imgFncd" alt="Imagem do Fornecedor">
+            <h2>Nome do Fornecedor<input id="NameF" type="text"></h2>
+            <p>Região: <input id="Region" type="text"></p>
+            <p>Descrição: <input id="Description" type="text"></p>
+            <p>Tipo de Cacau: <input id="CocoaType" type="text"></p>
+        </div>
     </div>
 </body>
 </html>

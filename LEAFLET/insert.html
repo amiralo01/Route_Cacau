@@ -4,43 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert Funcionario</title>
-
-    <script src="firebase.js"></script>
     
 </head>
 <body>
     <script>
-        var imageV, nameV, regionV, descriptionV, cocoaV;
-
-        function readsupplierinfo(){
-            imageV = document.getElementById("imgFncd").value;
-            nameV = document.getElementById("NameF").value;
-            regionV = document.getElementById("Region").value;
-            descriptionV = document.getElementById("Description").value;
-            cocoaV = document.getElementById("CocoaType").value;
-            console.log(imageV, nameV, regionV, descriptionV, cocoaV);
-        }
-
-        document.getElementById("insert").onclick = function(){
-            supplierinfo();
-
-            firebase
-                .database()
-                .ref("Informacao/" + cocoaV)
-                .set({
-                    id: cocoaV,
-                    Nome: nameV,
-                    Foto: iamgeV,
-                    Regiao: regionV,
-                    Descricao: descriptionV,
-                });
-            alert("Data Inserted");
-            document.getElementById("CocoaType").value = "";
-            document.getElementById("NameF").value = "";
-            document.getElementById("imgFncd").value = "";
-            document.getElementById("Region").value = "";
-        };
-
+        
     </script>
 
     <div class="button">
