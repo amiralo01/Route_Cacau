@@ -6,9 +6,8 @@
     <title>Tracking</title>
 
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="node_modules/leaflet/dist/leaflet.js"></script>
-    <script src="firebase.js"></script>
     
     <style>
         #map{
@@ -116,6 +115,8 @@
         }
 
         map.on('click', onMapClick);
+
+        
     </script>
 
     <div class="button">
@@ -124,10 +125,9 @@
 
     <div class="info-container">
         <div class="supplierinfo">
-            <img id="imgFncd" alt="Imagem do Fornecedor">
-            <h2>Nome do Fornecedor<input id="NameF" type="text"></h2>
-            <p>Região: <input id="Region" type="text"></p>
-            <p>Descrição: <input id="Description" type="text"></p>
+            <img id="img" alt="Imagem do Fornecedor">
+            <h2>Nome do Fornecedor:<input id="nome" type="text"></h2>
+            <p>Localidade: <input id="Description" type="text"></p>
             <p>Tipo de Cacau: <input id="CocoaType" type="text"></p>
         </div>
     </div>

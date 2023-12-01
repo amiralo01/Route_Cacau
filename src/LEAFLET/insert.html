@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <title>Insert Funcionario</title>
 
 </head>
@@ -20,6 +21,13 @@
         <input type="submit" />
     </form>
 
+    <div id="fornecedor">
+        <h1>Fornecedores</h1>
+        <ul>
+            <!-- Os dados da API serão exibidos aqui -->
+        </ul>
+    </div>
+
     <script>
 
         function savedata() {
@@ -32,7 +40,54 @@
             };
 
             axios.post('http://[::1]:3000/fornecedors', data);
+
         }
+
+        async function fetchData() {
+            try {
+                
+                const response = await axios.get('http://[::1]:3000/fornecedors');
+                const data = response.data;
+                const listElement = document.querySelector('#fornecedor ul');
+                // Limpar qualquer conteúdo anterior
+                listElement.innerHTML = '';
+
+                // Iterar sobre todos os dados e adicioná-los à lista
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+
+                    
+                    /*data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item.nome; // Substitua 'nome' pelo nome do campo que você deseja exibir
+                    listElement.appendChild(listItem);
+                    });*/
+
+                    // pega todos os atributos dos objetos
+                    for (const key in item) {
+                        if (item.hasOwnProperty(key)) {
+                            const attributeItem = document.createElement('span');
+                            if (key == 'senha') {
+                                attributeItem.textContent = key.delete;
+                            } else {
+                                attributeItem.textContent = `${key}: ${item[key]+';'}`;
+                            }
+                            
+                            listItem.appendChild(attributeItem);
+                        }
+                    }
+                      
+                    // Adicionar o item à lista
+                    listElement.appendChild(listItem);
+                });
+                                   
+            } catch (error) {
+                console.error('Erro ao obter dados do Fornecedor:', error);
+            }
+        }
+
+        // Chame a função para carregar os dados quando a página carregar
+        fetchData();
 
     </script>
 </body>
