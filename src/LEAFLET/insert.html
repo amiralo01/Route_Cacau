@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Insert Funcionario</title>
+
+</head>
+
+<body>
+
+    <form onsubmit="savedata(); return false;">
+        <h2>nome<input id="nome" type="text"></h2>
+        <p>email:<input id="email" type="email"></p>
+        <p>senha: <input id="senha" type="text"></p>
+        <p>img: <input id="img" type="text"></p>
+
+        <input type="submit" />
+    </form>
+
+    <script>
+
+        function savedata() {
+
+            const data = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                senha: document.getElementById('senha').value,
+                img: document.getElementById('img').value,
+            };
+
+            axios.post('http://[::1]:3000/fornecedors', data);
+        }
+
+    </script>
+</body>
+
+</html>
