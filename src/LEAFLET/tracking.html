@@ -6,8 +6,9 @@
     <title>Tracking</title>
 
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
     <style>
         #map{
@@ -19,37 +20,17 @@
             margin-left: 10%;
         }
 
-        .info-container {
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
-
-        .supplier-info {
-            text-align: center;
-        }
-
-        .supplier-info img {
-            width: 200px; /* Ajuste o tamanho conforme necessário */
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .supplier-info h2 {
-            color: #333;
-        }
-
-        .supplier-info p {
-            margin: 5px 0;
-        }
-
-        .region, .description, .cocoa-type {
-            font-weight: bold;
-            color: #0066cc; /* ou outra cor de destaque desejada */
-        }
     </style>
 </head>
 <body>
     <div id="map"></div>
+
+    <div id="fornecedor">
+        <h1>Fornecedores</h1>
+        <ul>
+            <!-- Os dados da API serão exibidos aqui -->
+        </ul>
+    </div>
 
     <script>
         
@@ -117,19 +98,32 @@
         map.on('click', onMapClick);
 
         
+        async function fetchData() {
+            try {
+                
+                const response = await axios.get('http://[::1]:3000/fornecedors');
+                const data = response.data;
+                
+                const listElement = document.querySelector('#fornecedor ul');
+                // Limpar qualquer conteúdo anterior
+                listElement.innerHTML = '';
+
+                data.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listeItem.textContent = item.tipo;
+
+                    listItem.textContent = item.nome; // Substitua 'nome' pelo nome do campo que você deseja exibir
+                    listElement.appendChild(listItem);
+                    
+                });
+
+            }catch (error) {
+                console.error('Erro ao obter dados do Fornecedor:', error);
+            }
+        }
+        fetchData(); 
+
     </script>
 
-    <div class="button">
-        <button id="read">Read</button>
-    </div>
-
-    <div class="info-container">
-        <div class="supplierinfo">
-            <img id="img" alt="Imagem do Fornecedor">
-            <h2>Nome do Fornecedor:<input id="nome" type="text"></h2>
-            <p>Localidade: <input id="Description" type="text"></p>
-            <p>Tipo de Cacau: <input id="CocoaType" type="text"></p>
-        </div>
-    </div>
 </body>
 </html>

@@ -14,7 +14,7 @@ export class Localidade extends Entity {
     type: 'string',
     required: true,
   })
-  nome: string;
+  nomeLocal: string;
 
   @property({
     type: 'string',

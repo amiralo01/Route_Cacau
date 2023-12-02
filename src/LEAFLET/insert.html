@@ -13,12 +13,13 @@
 <body>
 
     <form onsubmit="savedata(); return false;">
-        <h2>nome<input id="nome" type="text"></h2>
+        <h1> Cadastro de Fornecedor</h1>
+        <p>nome<input id="nome" type="text"></p>
         <p>email:<input id="email" type="email"></p>
         <p>senha: <input id="senha" type="text"></p>
         <p>img: <input id="img" type="text"></p>
 
-        <input type="submit" />
+        <input type="submit"/>
     </form>
 
     <div id="fornecedor">
@@ -27,6 +28,31 @@
             <!-- Os dados da API serão exibidos aqui -->
         </ul>
     </div>
+
+    <form onsubmit="savecocoa(); return false;">
+        <h1> Cadastro de cacaus</h1>
+        <p>Data da coleta: <input id="dataFab" type="date"></p>
+        <p>Localidade: <input id="localidadeId" type="number"></p>
+        <p>Tipo: <input id="tipoCacauId" type="number"></p>
+
+        <input type="submit"/>
+    </form>
+
+    <form onsubmit="savecocoatype(); return false;">
+        <h1> Cadastro de Tipo de Cacau </h1>
+        <p>Descrição: <input id="descricao" type="text"></p>
+
+        <input type="submit"/>
+    </form>
+
+    <form onsubmit="savelocal(); return false;">
+        <h1> Cadastro de Localidade </h1>
+        <p>Nome: <input id="nomeLocal" type="text"></p>
+        <p>Cidade: <input id="cidade" type="text"></p>
+        <p>Fornecedor: <input id="fornecedorId" type="number"></p>
+
+        <input type="submit"/>
+    </form>
 
     <script>
 
@@ -88,6 +114,38 @@
 
         // Chame a função para carregar os dados quando a página carregar
         fetchData();
+
+        function savecocoa() {
+            const cocoa = {
+                dataFab: new Date(document.getElementById('dataFab').value),
+                localidadeId: parseFloat(document.getElementById('localidadeId').value),
+                tipoCacauId: parseFloat(document.getElementById('tipoCacauId').value),
+            };
+
+            axios.post('http://[::1]:3000/cacaus', cocoa);
+
+        }
+
+        function savecocoatype() {
+            const typecocoa = {
+                descricao: document.getElementById('descricao').value,
+            };
+
+            axios.post('http://[::1]:3000/tipo-cacaus', typecocoa);
+
+        }
+
+        function savelocal() {
+            const local = {
+                nomeLocal: document.getElementById('nomeLocal').value,
+                cidade: document.getElementById('cidade').value,
+                fornecedorId: parseFloat(document.getElementById('fornecedorId').value),
+
+            };
+
+            axios.post('http://[::1]:3000/localidades', local);
+
+        }
 
     </script>
 </body>
