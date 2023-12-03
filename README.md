@@ -46,24 +46,23 @@ Note: It is worth mentioning that information from suppliers is received directl
 
 # Commands needed to run the codes on your machine: ❕ 
 
+## Node.Js
+
 ### Windows
 
 Immediately after selecting a version (LTS or Current), the download of the installer for Windows will begin. As is common with Windows installers, just keep clicking the **Next** buttons until you reach the end of the installation.
 
 Once the installation is complete, we will need to test that everything is ok. So, launch your terminal. Press **Windows Key + R** to open the Run program. Type **powershell** and press the **Enter** key.
 
-<div style="text-align: center;">
-    <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/10/windows-executar-powershell.png" alt="Introduction Install Node.Js in Windows" width="400"/>
-</div>
+<h2 align ="center">
+    <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/10/windows-executar-powershell.png" width="400"/>
+</h2>
 
 Then, in the terminal, type **node -v** and press the **Enter** key. If the Node version is displayed, your installation was successful!
 
-<div style="text-align: center;">
-    <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/10/powershell-node-version.png" alt="Verification Install Node.Js in Windows" width="400"/>
-</div>
-
-
-## Node.Js
+<h2 align ="center">
+    <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/10/powershell-node-version.png" width="400"/>
+</h2>
 
 ### Linux 
 To run JavaScript commands you need to have Node JS already installed on your machine, but this is easy, if you use the **Linux** operating system just go to your command prompt or press Ctrl + Alt + T and it will appear, then inside it type the installation command ```curl```:
@@ -84,9 +83,9 @@ Right after installation, in the terminal type node -v and press the Enter key. 
 
 Immediately after selecting a version (LTS or Current), the Mac installer download (.pkg file) will begin. Once you open this file, the installer will start.
 
-<div style="text-align: center;">
+<h2 align = "center">
     <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/10/mac-instalador-nodejs.png" alt="Introduction Install Node.Js in Mac" width="400"/>
-</div>
+</h2>
 
 Just click to continue until it finishes installing.
 We need to test if everything is ok. So, launch your terminal. To do this, press **Command + Spacebar**. Type **terminal** and press **Enter**.
