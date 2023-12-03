@@ -45,9 +45,62 @@ Route Cacau is a website that will be easy to access where the user can simply s
 Note: It is worth mentioning that information from suppliers is received directly from them into the database.
 
 # Commands needed to run the codes on your machine: ❕ 
-* To be able to use the Leaflet tool, you must use the ```npm install leaflet``` command in your terminal to install the necessary dependencies on your machine.
-* Para poder utilizar a base de dados MySQL você precisa realizar a sua instalação em sua máquina vá até o site do [MySQL](https://dev.mysql.com/downloads/) faça o dowload  da versão compatível com sua máquina e instale-a, em seguida para visualizar o banco é recomendável utiliza o [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) e realizar todo o processo de configuração dele para instalá-lo.
-* Outra opção também para visualizar e ativar o banco de dados mysql é utilizar a ferramenta [XAMPP](https://www.apachefriends.org/pt_br/download.html) na qual você poderá visualizar como administrador e sua porta local.
+
+### Windows
+
+Immediately after selecting a version (LTS or Current), the download of the installer for Windows will begin. As is common with Windows installers, just keep clicking the **Next** buttons until you reach the end of the installation.
+
+Once the installation is complete, we will need to test that everything is ok. So, launch your terminal. Press **Windows Key + R** to open the Run program. Type **powershell** and press the **Enter** key.
+
+<div style="text-align: center;">
+    <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/10/windows-executar-powershell.png" alt="Introduction Install Node.Js in Windows" width="400"/>
+</div>
+
+Then, in the terminal, type **node -v** and press the **Enter** key. If the Node version is displayed, your installation was successful!
+
+<div style="text-align: center;">
+    <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/10/powershell-node-version.png" alt="Verification Install Node.Js in Windows" width="400"/>
+</div>
+
+
+## Node.Js
+
+### Linux 
+To run JavaScript commands you need to have Node JS already installed on your machine, but this is easy, if you use the **Linux** operating system just go to your command prompt or press Ctrl + Alt + T and it will appear, then inside it type the installation command ```curl```:
+```sh
+sudo apt-get install curl
+```
+Then run the script below to add the Node repository:
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+```
+And finally, to install Node, run:
+```sh
+sudo apt-get install -y nodejs
+```
+Right after installation, in the terminal type node -v and press the Enter key. If the Node version is displayed, your installation was successful!
+
+### Mac
+
+Immediately after selecting a version (LTS or Current), the Mac installer download (.pkg file) will begin. Once you open this file, the installer will start.
+
+<div style="text-align: center;">
+    <img src="https://dkrn4sk0rn31v.cloudfront.net/uploads/2020/10/mac-instalador-nodejs.png" alt="Introduction Install Node.Js in Mac" width="400"/>
+</div>
+
+Just click to continue until it finishes installing.
+We need to test if everything is ok. So, launch your terminal. To do this, press **Command + Spacebar**. Type **terminal** and press **Enter**.
+Then, in the terminal, type **node -v** and press the **Enter** key. If the Node version is displayed, your installation was successful!
+If you need to have more than one version of Node.js on your machine, check out this post on [how to install multiple versions of Node.js using NVM](https://www.treinaweb.com.br/blog/instalando-e-gerenciando-varias-versoes-do-node-js-com-nvm/).
+
+## Leaflet
+
+To be able to use the Leaflet tool, you must use the ```npm install leaflet``` command in your terminal to install the necessary dependencies on your machine. If you still have any, you can visit the [tours page](https://leafletjs.com/examples.html) of leaflet to solve them.
+
+## MySQL
+
+Para poder utilizar a base de dados MySQL você precisa realizar a sua instalação em sua máquina vá até o site do [MySQL](https://dev.mysql.com/downloads/) faça o dowload  da versão compatível com sua máquina e instale-a, em seguida para visualizar o banco é recomendável utiliza o [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) e realizar todo o processo de configuração dele para instalá-lo.
+Outra opção também para visualizar e ativar o banco de dados mysql é utilizar a ferramenta [XAMPP](https://www.apachefriends.org/pt_br/download.html) na qual você poderá visualizar como administrador e sua porta local.
 
 ## routecacau_api
 
@@ -149,4 +202,4 @@ This project is using the MIT license, see the [LICENSE](./LICENSE) file for mor
 * The document with job specifications is available [here](documents/Trabalho%20Final%20Descrição.pdf).
 * The document responsible for inserting supplier and cocoa data is found in [insert.html](src/LEAFLET/insert.html).
 * The file responsible for choosing the trace view is the [index.html](src/LEAFLET/index.html).
-* The documents with the tracking screens are located in the [LEAFLET](src/LEAFLET) directory and the tracking screens are [tracking](https://github.com/amiralo01/Route_Cacau/blob/main/src/LEAFLET/tracking.html), [tracking2](https://github.com/amiralo01/Route_Cacau/blob/main/src/LEAFLET/tracking2.html) and [tracking3](https://github.com/amiralo01/Route_Cacau/blob/main/src/LEAFLET/tracking3.html).
+* The documents with the tracking screens are located in the [LEAFLET](src/LEAFLET) directory and the tracking screens are [tracking](src/LEAFLET/tracking.html), [tracking2](src/LEAFLET/tracking2.html) and [tracking3](src/LEAFLET/tracking3.html).

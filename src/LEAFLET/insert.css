@@ -20,9 +20,7 @@ body {
     margin: 0; /* Remove a margem padrão do h1 */
 }
 
-
-
-.header-trackings nav ul {
+.header-main nav ul {
     list-style-type: none;
     padding: 10px;
     margin: 0;
@@ -30,12 +28,12 @@ body {
     background-color:chocolate;
 }
 
-.header-trackings nav li {
+.header-main nav li {
     display: inline-block;
     margin-right: 10px;
 }
 
-.header-trackings nav a {
+.header-main nav a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -45,13 +43,52 @@ body {
     margin-top: 5px; /* Adiciona espaço acima de cada link */
 }
 
-.header-trackings nav a:hover {
+.header-main nav a:hover {
     color: #ffcc00; /* ou outra cor de destaque desejada ao passar o mouse */
 }
 
-.main-content {
-    padding: 20px;
-    text-align: center;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fornecedor-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex-basis: calc(25% - 20px);
+    margin-right: 25px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+/* Estilo para os botões de submit */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+span {
+    display: block;
+    margin-bottom: 5px;
 }
 
 footer {
@@ -59,7 +96,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
+    /*position: fixed;*/
+    bottom: 10px;
     width: 100%;
 }
