@@ -11,20 +11,81 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <style>
+        .logo {
+            width: 90px; /* Ajuste o tamanho conforme necessário */
+            height: auto; /* Isso garante que a proporção da imagem seja mantida */
+            margin-right: 5px; /* Ajuste a margem conforme necessário para separar a logo do texto */
+        }
         #map{
             height: 400px;
+            margin-right: 10%;
+            margin-left: 10%;
+            border: 4px solid;
+            border-image: linear-gradient(to right, #ffe44a, #ffa600);
+            border-image-slice: 1;
+            border-radius: 10px; 
         }
 
         body {
-            margin-right: 10%;
-            margin-left: 10%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #6e3004, #a56209);
         }
 
+        .header-container {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, #000000, #463729);
+            color: #fff;
+        }
+
+        .header-container h1 {
+            margin: 0; /* Remove a margem padrão do h1 */
+        }
+
+        .Fornecedor_Cacau {
+            background-color: #57d357; 
+            padding: 10px;
+            border-radius: 15px; 
+            max-width: 50%;
+            margin: 0 auto; /
+        }
+
+        #fornecedor h1 {
+            color: #fff;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #030303;
+            color: #fff;
+            text-align: center;
+            padding: 0,5px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <div class="header-container">
+            <img src="../../Img/RouteCacau_icon.png" alt="Logo do Route Cacau" class="logo">
+            <h1>Rastreamento de Cacau de Cacauway</h1>
+        </div>
+    </header>
+
     <div id="map"></div>
+
+    <div class="Fornecedor_Cacau">
+        <div id="fornecedor">
+            <h1>Fornecedores</h1>
+            <ul>
+                <!-- Os dados da API serão exibidos aqui -->
+            </ul>
+        </div>
+    </div>
 
     <script>
 
@@ -70,11 +131,8 @@
         
     </script>
 
-    <div id="fornecedor">
-        <h1>Fornecedores</h1>
-        <ul>
-            <!-- Os dados da API serão exibidos aqui -->
-        </ul>
-    </div>
+    <footer>
+        <p>&copy; 2023 Rastreamento de Cacau. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

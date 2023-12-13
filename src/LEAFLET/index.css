@@ -12,7 +12,7 @@ body {
 .header-container {
     display: flex;
     align-items: center;
-    background-color: #333;
+    background: linear-gradient(to right, #000000, #463729);
     color: #fff;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 footer {
-    background-color: #333;
+    background-color: #030303;
     color: #fff;
     text-align: center;
     padding: 10px;

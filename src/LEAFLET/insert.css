@@ -12,12 +12,12 @@ body {
 .header-container {
     display: flex;
     align-items: center;
-    background-color: #333;
+    background: linear-gradient(to right, #000000, #463729);
     color: #fff;
 }
 
 .header-container h1 {
-    margin: 0; /* Remove a margem padrão do h1 */
+    margin: 0; 
 }
 
 .header-main nav ul {
@@ -39,12 +39,12 @@ body {
     font-weight: bold;
     font-size: 18px;
     transition: color 0.3s ease;
-    display: block; /* Faz cada link ocupar uma linha inteira */
-    margin-top: 5px; /* Adiciona espaço acima de cada link */
+    display: block; 
+    margin-top: 5px; 
 }
 
 .header-main nav a:hover {
-    color: #ffcc00; /* ou outra cor de destaque desejada ao passar o mouse */
+    color: #ffcc00; 
 }
 
 .container {
@@ -92,7 +92,7 @@ span {
 }
 
 footer {
-    background-color: #333;
+    background-color: #030303;
     color: #fff;
     text-align: center;
     padding: 10px;
