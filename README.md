@@ -103,8 +103,8 @@ Outra opção também para visualizar e ativar o banco de dados mysql é utiliza
 
 ## routecacau_api
 
-This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
-[initial project layout](https://loopback.io/doc/en/lb4/Loopback-application-layout.html).
+This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the [initial project layout](https://loopback.io/doc/en/lb4/Loopback-application-layout.html).
+It is worth noting that as the project has already created the database, the api and the necessary modules, after installing all the necessary dependencies, go to your terminal and type the command ```npm run migrate``` to be able to use the api. our project.
 
 ## Install dependencies
 
