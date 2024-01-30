@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="./Img/RouteCacau_icon.png"/>
+    <img src="./Img/Route_logo.png"/>
 </h1>
 
 <h1 align = "center"> RouteCacau </h1>

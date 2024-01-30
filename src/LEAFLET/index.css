@@ -5,6 +5,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -14,6 +17,7 @@ body {
     align-items: center;
     background: linear-gradient(to right, #000000, #463729);
     color: #fff;
+    width: 98,5%;
 }
 
 .header-container h1 {
@@ -50,16 +54,17 @@ body {
 }
 
 .main-content {
+    flex: 1;
     padding: 20px;
     text-align: center;
 }
 
 footer {
+    position: relative;
     background-color: #030303;
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 98,5%;
 }
