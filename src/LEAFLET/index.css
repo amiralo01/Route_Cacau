@@ -1,4 +1,5 @@
 .logo {
+
     width: 90px; /* Ajuste o tamanho conforme necessário */
     height: auto; /* Isso garante que a proporção da imagem seja mantida */
     margin-right: 5px; /* Ajuste a margem conforme necessário para separar a logo do texto */
@@ -249,6 +250,75 @@ h1 {
 .main-content3 .info_phone a:hover{
     color: #b4120c;
 }
+
+.Product {
+    background: linear-gradient(45deg, #db5b3b, #ca6b23); /* Gradiente laranja */
+    color: #fff; /* Cor do texto - branco */
+    padding: 20px;
+    border-radius: 10px; /* Borda arredondada */
+    height: 100%;
+    width: 25%;
+    position: relative;
+}
+.Product p1{
+    text-align: left;
+}
+.Product p{
+    text-align: left;
+}
+
+.cacao-button {
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #8B4513; /* Cor do botão - marrom */
+    color: #fff; /* Cor do texto - branco */
+    border: 2px solid #a75418; /* Cor da borda - marrom */
+    border-radius: 10px; /* Borda arredondada */
+    transition: background-color 0.3s ease;
+}
+
+.cacao-button:hover {
+    background-color: #4d2c0b; /* Cor do botão ao passar o mouse */
+    border-color: #654321; /* Cor da borda ao passar o mouse */
+}
+
+.main-content4 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.main-content4 h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.main-content4 .Routes {
+    display: flex;
+    margin-bottom: 15px; /* Adicione espaço entre as linhas conforme necessário */
+    flex-direction: row;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 10px;
+}
+
+.main-content4 h3{
+    text-align: center;
+}
+
+.main-content4 img {
+    display: block;
+    width: 150px; 
+    height: auto; 
+    margin: 0 auto;
+}
+
 footer {
     position: relative;
     background-color: #030303;
