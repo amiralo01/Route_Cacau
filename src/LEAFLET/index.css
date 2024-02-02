@@ -6,10 +6,13 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    
     min-height: 100vh;
+    width: 100%;
     margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
 }
 
@@ -57,42 +60,44 @@ h1 {
 }
 
 .slideshow {
-    display: flex;
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
     overflow: hidden;
+    border-radius: 0.5rem;
 }
 
-.slide {
-    flex: 0 0 100%; /* Cada slide ocupa 100% da largura disponível */
-    transition: opacity 2s ease-in-out;
+.slides {
+    width: 52%;
+    height: 400px;
+    display: flex;
+    /*flex: 0 0 100%; 
+    transition: opacity 2s ease-in-out;*/
+}
+
+.slides input{
+    display:none;
+}
+
+.slide{
+    width: 300%;
+    position: relative;
+    transition: 5s;
 }
 
 .slide img {
-    width: 100%;
-    height: 450px;
+    width: 80%px;
 }
 
-/* Adicione animações */
-/*@keyframes slideAnimation {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+#radio1:checked ~ .first{
+    margin-left: -50%;
 }
-
-/* Animação para cada slide */
-/*.slide:nth-child(1) {
-    animation: slideAnimation 5s infinite;
+#radio2:checked ~ .first{
+    margin-left: -320%;
 }
-
-.slide:nth-child(2) {
-    animation: slideAnimation 5s 2s infinite;
+#radio3:checked ~ .first{
+    margin-left: -440%;
 }
-
-.slide:nth-child(3) {
-    animation: slideAnimation 5s 4s infinite;
-}*/
 
 .main-content {
     flex: 1;
@@ -101,10 +106,10 @@ h1 {
 }
 
 .main-content p::before {
-    content: "•"; /* Adiciona um ponto antes do texto */
-    color: chocolate; /* Define a cor do ponto */
-    display: inline-block; /* Permite ajustar a posição do ponto */
-    margin-right: 5px; /* Espaçamento à direita do ponto */
+    content: "•";
+    color: chocolate; 
+    display: inline-block; 
+    margin-right: 5px; 
 }
 
 .main-content2 {
@@ -114,10 +119,10 @@ h1 {
 }
 
 .main-content2 p::before {
-    content: "•"; /* Adiciona um ponto antes do texto */
-    color: chocolate; /* Define a cor do ponto */
-    display: inline-block; /* Permite ajustar a posição do ponto */
-    margin-right: 5px; /* Espaçamento à direita do ponto */
+    content: "•"; 
+    color: chocolate; 
+    display: inline-block; 
+    margin-right: 5px; 
 }
 
 .main-content3 {
@@ -252,10 +257,10 @@ h1 {
 }
 
 .Product {
-    background: linear-gradient(45deg, #db5b3b, #ca6b23); /* Gradiente laranja */
-    color: #fff; /* Cor do texto - branco */
+    background: linear-gradient(45deg, #f0785a, #ce6515); /* Gradiente laranja */
+    color: #fff; 
     padding: 20px;
-    border-radius: 10px; /* Borda arredondada */
+    border-radius: 15px; 
     height: 100%;
     width: 25%;
     position: relative;
@@ -275,16 +280,14 @@ h1 {
     font-size: 18px;
     text-align: center;
     text-decoration: none;
-    background-color: #8B4513; /* Cor do botão - marrom */
-    color: #fff; /* Cor do texto - branco */
-    border: 2px solid #a75418; /* Cor da borda - marrom */
-    border-radius: 10px; /* Borda arredondada */
+    background: linear-gradient(90deg, #4d2c0b, #cc7824); 
+    color: #fff;  
+    border-radius: 10px; 
     transition: background-color 0.3s ease;
 }
 
 .cacao-button:hover {
-    background-color: #4d2c0b; /* Cor do botão ao passar o mouse */
-    border-color: #654321; /* Cor da borda ao passar o mouse */
+    background: linear-gradient(90deg, #5a391a, #80470e); 
 }
 
 .main-content4 {
@@ -303,8 +306,8 @@ h1 {
     display: flex;
     margin-bottom: 15px; /* Adicione espaço entre as linhas conforme necessário */
     flex-direction: row;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; 
+    justify-content: center; 
     gap: 10px;
 }
 
@@ -317,6 +320,7 @@ h1 {
     width: 150px; 
     height: auto; 
     margin: 0 auto;
+    border-radius: 50%;
 }
 
 footer {

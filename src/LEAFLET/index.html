@@ -18,7 +18,7 @@
                     <li><a href="#O_que_e">O que é o Route Cacau?</a></li>
                     <li><a href="#Porque_usar">Por que usar o Route Cacau?</a></li>
                     <li><a href="#Empresas">Empresas Relacionadas</a></li>
-                    <li><a href="#Rotas">As rotas dos produtos</a></li>
+                    <li><a href="#Rotas">Rotas dos produtos</a></li>
                     <!-- Adicione mais itens conforme necessário para outras seções -->
                 </ul>
             </nav>
@@ -29,9 +29,23 @@
     <h1>Bem-vindo ao rastreamento de cacau rastreando a jornada do cacau em Santarém-PA</h1>
 
     <div class="slideshow">
-        <div class="slide"><img src="../../Img/Imagem1.jpg" alt="Imagem 1"></div>
-        <div class="slide"><img src="../../Img/Imagem2.jpg" alt="Imagem 2"></div>
-        <div class="slide"><img src="../../Img/Imagem3.jpg" alt="Imagem 3"></div>
+        <div class="slides">
+            <!--Radio buttons-->
+            <input type="radio" nome="radio-btn" id="radio1">
+            <input type="radio" nome="radio-btn" id="radio2">
+            <input type="radio" nome="radio-btn" id="radio3">
+            <!--Slide images-->
+            <div class="slide first">
+                <img src="../../Img/Imagem1.jpg" alt="Imagem 1">
+            </div>
+            <div class="slide">
+                <img src="../../Img/Imagem2.jpg" alt="Imagem 2">
+            </div>
+            <div class="slide">
+                <img src="../../Img/Imagem3.jpg" alt="Imagem 3">
+            </div>
+        </div>
+        
     </div>
 
     <section id ="O_que_e" class="main-content">
@@ -207,33 +221,6 @@
         <p>&copy; 2023 Rastreamento de Cacau. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-    
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // JavaScript para controlar a transição das imagens
-        const slideshow = document.querySelector('.slideshow');
-        let counter = 1;
-
-        setInterval(() => {
-            slideshow.style.transition = 'transform 2s ease-in-out';
-            slideshow.style.transform = `translateX(${-counter * 100}%)`;
-            counter++;
-            if (counter === 3) {
-                counter = 0;
-                setTimeout(() => {
-                    slideshow.style.transition = 'none';
-                    slideshow.style.transform = 'translateX(0)';
-                }, 2000); // Tempo sem transição antes de reiniciar
-            }
-        }, 5000); // Tempo de espera entre as transições
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
