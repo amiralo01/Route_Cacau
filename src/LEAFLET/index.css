@@ -71,8 +71,6 @@ h1 {
     width: 52%;
     height: 400px;
     display: flex;
-    /*flex: 0 0 100%; 
-    transition: opacity 2s ease-in-out;*/
 }
 
 .slides input{
@@ -125,6 +123,131 @@ h1 {
     margin-right: 5px; 
 }
 
+
+/* CSS para as empresas */
+
+.main-content3 .Company_info {
+    display: flex;
+    margin-bottom: 15px; 
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px;
+    background: linear-gradient(45deg, #faf2f0, #e6e3e1);
+    border-radius: 15px;
+    height: 100%;
+    width: 30%;
+    position: relative;
+}
+
+.main-content3 img {
+    display: block;
+    width: 150px; 
+    height: auto; 
+    margin: 0 auto;
+    border-radius: 15%;
+}
+
+/*CSS para o instagram*/
+
+.main-content3 img[alt="Instagram"] {
+    display: inline-flex;
+    width: 25px; 
+    height: auto; 
+    align-items: center;
+    padding: 2px;
+    margin-left: 5px;
+}
+.main-content3 .info_insta a {
+    text-decoration: none;
+    color: #ad0361; 
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+.main-content3 .info_insta a:hover{
+    color: #8907aa;
+}
+
+/*CSS para o Email*/
+.main-content3 img[alt="Email"] {
+    display: inline-flex;
+    width: 25px; 
+    height: auto; 
+    align-items: center;
+    padding: 2px;
+    margin-left: 5px;
+}
+.main-content3 .info_email a {
+    text-decoration: none;
+    color: #0b69b6; 
+    font-weight: bold;
+    display: inline-flex;
+    margin-top: 0;
+    margin-bottom: 1%;
+    align-items: center;
+}
+.main-content3 .info_email a:hover{
+    color: #1e019c;
+}
+
+/* CSS para o WhatsApp */
+.main-content3 img[alt="WhatsApp"] {
+    display: flex;
+    width: 25px; 
+    height: auto; 
+    align-items: center;
+    padding: 2px;
+    margin-left: 5px;
+    margin-right: 2%;
+}
+.main-content3 .info_whatsapp{
+    text-align: center;
+    display:flex;
+    align-items: center;
+}
+.main-content3 .info_whatsapp a {
+    text-decoration: none;
+    color: #0adf15; 
+    font-weight: bold;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1%;
+    align-items: center;
+}
+.main-content3 .info_whatsapp a:hover{
+    color: #05830f;
+}
+
+/*CSS para o telefone*/
+.main-content3 img[alt="Telefone"] {
+    display: flex;
+    width: 25px; 
+    height: auto; 
+    align-items: center;
+    padding: 4px;
+    margin-left: 5px;
+}
+.main-content3 .info_phone{
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}
+.main-content3 .info_phone a {
+    text-decoration: none;
+    color: #eb2207; 
+    font-weight: bold;
+    display: inline-flex;
+    margin-top: 0;
+    margin-bottom: 1%;
+    text-align: center;
+}
+.main-content3 .info_phone a:hover{
+    color: #b4120c;
+}
+
 .main-content3 {
     display: flex;
     flex-wrap: wrap;
@@ -139,123 +262,10 @@ h1 {
 
 .main-content3 h3{
     text-align: center;
+    color:#ce6515;
 }
 
-.main-content3 .Company_info {
-    width: calc(33% - 5px); /* 33.33% para 3 em uma linha, -10px para lidar com margens entre as divs */
-    margin-bottom: 15px; /* Adicione espaço entre as linhas conforme necessário */
-    flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
-}
-
-.main-content3 img {
-    display: block;
-    width: 150px; 
-    height: auto; 
-    margin: 0 auto;
-}
-
-/*CSS para o instagram*/
-.main-content3 .info_insta{
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-}
-.main-content3 img[alt="Instagram"] {
-    display: block;
-    width: 25px; 
-    height: auto; 
-    align-items: center;
-    padding: 4px;
-    margin-right: 3px;
-    margin-left: 110px;
-}
-.main-content3 .info_insta a {
-    text-decoration: none;
-    color: #ad0361; 
-    font-weight: bold;
-    display: inline-block;
-}
-.main-content3 .info_insta a:hover{
-    color: #8907aa;
-}
-
-/*CSS para o Email*/
-.main-content3 img[alt="Email"] {
-    display: block;
-    width: 25px; 
-    height: auto; 
-    align-items: center;
-    padding: 4px;
-    margin-right: 3px;
-    margin-left: 110px;
-}
-.main-content3 .info_email{
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-}
-.main-content3 .info_email a {
-    text-decoration: none;
-    color: #0b69b6; 
-    font-weight: bold;
-    display: inline-block;
-}
-.main-content3 .info_email a:hover{
-    color: #1e019c;
-}
-
-/* CSS para o WhatsApp */
-.main-content3 img[alt="WhatsApp"] {
-    display: block;
-    width: 25px; 
-    height: auto; 
-    align-items: center;
-    padding: 4px;
-    margin-right: 3px;
-    margin-left: 110px;
-}
-.main-content3 .info_whatsapp{
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-}
-.main-content3 .info_whatsapp a {
-    text-decoration: none;
-    color: #0adf15; 
-    font-weight: bold;
-    display: inline-block;
-}
-.main-content3 .info_whatsapp a:hover{
-    color: #05830f;
-}
-
-/*CSS para o telefone*/
-.main-content3 img[alt="Telefone"] {
-    display: block;
-    width: 25px; 
-    height: auto; 
-    align-items: center;
-    padding: 4px;
-    margin-right: 3px;
-    margin-left: 110px;
-}
-.main-content3 .info_phone{
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-}
-.main-content3 .info_phone a {
-    text-decoration: none;
-    color: #eb2207; 
-    font-weight: bold;
-    display: inline-block;
-}
-.main-content3 .info_phone a:hover{
-    color: #b4120c;
-}
-
+/* CSS para os produtos */
 .Product {
     background: linear-gradient(45deg, #f0785a, #ce6515); /* Gradiente laranja */
     color: #fff; 
@@ -284,6 +294,7 @@ h1 {
     color: #fff;  
     border-radius: 10px; 
     transition: background-color 0.3s ease;
+    justify-content: center;
 }
 
 .cacao-button:hover {
@@ -304,7 +315,7 @@ h1 {
 
 .main-content4 .Routes {
     display: flex;
-    margin-bottom: 15px; /* Adicione espaço entre as linhas conforme necessário */
+    margin-bottom: 15px;
     flex-direction: row;
     align-items: center; 
     justify-content: center; 
