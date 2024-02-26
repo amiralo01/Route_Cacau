@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="../css/insert.css">
+
+    <title>Insert Funcionario</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../../../Img/Route_logo.png" alt="Logo do Route Cacau" class="logo">
+            <h1>Insira os dados para o Rastreamento de Cacau</h1>
+        </div>
+        <div class="header-main">
+            <nav>
+                <ul>
+                    <li><a href="../html/index.html">Menu principal</a></li>
+                </ul>
+            </nav>
+        </div> 
+    </header>
+
+    <div class="container">
+
+        <div class="fornecedor-group">
+            <form onsubmit="savedata(); return false;">
+                <h2> Cadastro de Fornecedor</h2>
+                <p>nome: <input id="nome" type="text"></p>
+                <p>email: <input id="email" type="email"></p>
+                <p>senha: <input id="senha" type="text"></p>
+                <p>img: <input id="img" type="text"></p>
+        
+                <input type="submit"/>
+            </form>
+
+            <div id="fornecedor">
+                <h2>Fornecedores</h2>
+                <ul>
+                    <!-- Os dados da API serão exibidos aqui -->
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <form onsubmit="savecocoa(); return false;">
+                <h2> Cadastro de cacaus</h2>
+                <p>Data da coleta: <input id="dataFab" type="date"></p>
+                <p>Localidade: <input id="localidadeId" type="number"></p>
+                <p>Tipo: <input id="tipoCacauId" type="number"></p>
+        
+                <input type="submit"/>
+            </form>
+        </div>
+
+        <div clas="form-group">
+            <form onsubmit="savecocoatype(); return false;">
+                <h2> Cadastro de Tipo de Cacau </h2>
+                <p>Descrição: <input id="descricao" type="text"></p>
+        
+                <input type="submit"/>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <form onsubmit="savelocal(); return false;">
+                <h2> Cadastro de Localidade </h2>
+                <p>Nome: <input id="nomeLocal" type="text"></p>
+                <p>Cidade: <input id="cidade" type="text"></p>
+                <p>Fornecedor: <input id="fornecedorId" type="number"></p>
+        
+                <input type="submit"/>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Rastreamento de Cacau. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../js/insert.js"></script>
+</body>
+</html>

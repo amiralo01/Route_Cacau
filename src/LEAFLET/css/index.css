@@ -62,7 +62,7 @@ h1 {
 .slideshow {
     margin: 0 auto;
     width: 800px;
-    height: 400px;
+    height: 45%;
     overflow: hidden;
     border-radius: 0.5rem;
 }
@@ -83,12 +83,8 @@ h1 {
     transition: 5s;
 }
 
-.slide img {
-    width: 80%px;
-}
-
 #radio1:checked ~ .first{
-    margin-left: -50%;
+    margin-left: -60%;
 }
 #radio2:checked ~ .first{
     margin-left: -320%;
@@ -123,6 +119,28 @@ h1 {
     margin-right: 5px; 
 }
 
+/*Imagem do Fornecedor com o Empresário gerado por IA*/
+.Supplier_and_Company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Supplier_and_Company img {
+    width: 40%;
+    border-radius: 13%;
+}
+.Supplier_and_Company h4{
+    margin-top: 0.5%; 
+    text-align: center; 
+}
+.Supplier_and_Company a{
+    margin-top: -0.9%;
+    text-align: center;
+    color: #4d2c0b;
+}
+.Supplier_and_Company a:hover {
+    color: #ce790a;
+}
 
 /* CSS para as empresas */
 
