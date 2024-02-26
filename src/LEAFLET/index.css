@@ -62,7 +62,7 @@ h1 {
 .slideshow {
     margin: 0 auto;
     width: 800px;
-    height: 400px;
+    height: 45%;
     overflow: hidden;
     border-radius: 0.5rem;
 }
@@ -83,12 +83,8 @@ h1 {
     transition: 5s;
 }
 
-.slide img {
-    width: 80%px;
-}
-
 #radio1:checked ~ .first{
-    margin-left: -50%;
+    margin-left: -60%;
 }
 #radio2:checked ~ .first{
     margin-left: -320%;
