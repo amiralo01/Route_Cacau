@@ -8,23 +8,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-let count = 1;
-document.getElementById("radio1").checked = true;
+const imgs = document.getElementById("img");
+const img = document.querySelectorAll("#img img");
 
-setInterval(function(){
-    nextImage();
-}, 2000);
+let idx = 0;
 
-function nextImage(){
-    count++;
-    if(count>3){
-        count = 1;
+function carrosel(){
+    idx++;
+    if(idx > img.length -1) {
+        idx = 0;
     }
-    
-    for(let i = 1; i <= 3; i++)
-        document.getElementById("radio"+i).checked = false;
-
-    document.getElementById("radio"+count).checked = true;
+    imgs.style.transform = `translateX(${-idx *318}px)`;
 }
 
-function slideShow(){}
+setInterval(carrosel, 1800);
