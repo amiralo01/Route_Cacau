@@ -77,8 +77,10 @@ h1 {
     box-shadow: 2px 2px 2px 4px black;
     overflow: hidden;
     height: 400px;
-    width: 100%;
-    border-radius: 4%;
+    width: 95%;
+    border-radius: calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh);
+    margin-right: auto;
+    margin-left: auto;
 }
 .container{
     box-sizing: border-box;
@@ -93,62 +95,73 @@ h1 {
     width: 100%;
 }
 
-.main-content {
+.container2 {
+    display: flex;
+}
+
+.Whatcocoa {
     flex: 1;
     padding: 20px;
     text-align: left;
+    padding: 2%;
+    width: 75%;
 }
 
-.main-content p::before {
+.Whatcocoa p::before {
     content: "•";
     color: chocolate; 
     display: inline-block; 
-    margin-right: 5px; 
+    margin-right: 1%; 
+    padding: 0.5%;
 }
-
+.destaque {
+    color: #311c00;
+    font-size: larger;
+}
+.Whatcocoa .destaque::before {
+    content: none;
+    margin-right: 0; 
+}
 /* --- Imagens ao lado --- */
-.gpscocoa {
-    margin-top: -12%;
-    float: right;
-    margin-left: 20%;
-    border-radius: 50%; 
-    overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
-}
-.gpscocoa img {
-    width: 200px; 
-    height: auto;
+
+.Rightimages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.Products_cocoa {
-    margin-top: 4%;
-    float: right;
-    margin-left: 50%;
-    border-radius: 50%; 
-    overflow: hidden;
-}
-.Products_cocoa img{
-    width: 220px; 
-    height: auto;
+div .gpscocoa,
+div .Products_cocoa,
+div .transport {
+    margin-top: 6%;
+    margin-bottom: 4%;
+    width: 30%;
 }
 
-.transport {
-    margin-top: 3%;
-    float: right;
-    margin-left: 40%;
-    border-radius: 50%; 
-    overflow: hidden;
-}
-.transport img{
-    width: 200px; 
-    height: auto;
+div .gpscocoa img,
+div .Products_cocoa img,
+div .transport img {
+    border-radius: 50%;
+    width: 100%;
+    height: 200px;
+    border-width: 4%;
+    border: 5px solid transparent;
+    background: chocolate;
 }
 
 /* --- Text --- */
-
-.main-content2 {
+.container3 {
+    display: flex;
+}
+.Because {
     flex: 1;
     padding: 20px;
     text-align: left;
+    width: 67.8%;
+    padding: 2%;
+    margin-top: 6%;
+    margin-bottom: 4%;
 }
 
 .main-content2 p::before {
@@ -160,11 +173,14 @@ h1 {
 
 /*Imagem do Fornecedor com o Empresário gerado por IA*/
 .Supplier_and_Company {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 10%;
 }
 .Supplier_and_Company img {
+    margin-top: 20%;
     width: 40%;
     border-radius: 13%;
 }
@@ -454,7 +470,13 @@ h1 {
     display: inline-block; 
     margin-right: 5px; 
 }
-.main-content5 img{
+.main-content5 .destaque::before {
+    content: 0;
+    margin: 0%;
+}
+div.Mousse img,
+div.Brownie img,
+div.Brigadeiro img{
     display: block;
     width: 400px; 
     height: 70%; 
@@ -462,9 +484,75 @@ h1 {
     margin-top: 1%;
     border-radius: 50%;
     border: 5px solid transparent;
-    background: linear-gradient(45deg, #ff7e5f, #feb47b);
-    transition: border-color 0.3s ease;
+    background: linear-gradient(180deg, #8f3400, #ec9858);
 }
+
+.Info_mousse {
+    text-align: justify; 
+    background: linear-gradient(90deg, #6e2800, #eca241);
+    border-radius:calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh);
+    border-style:outset; 
+    padding: 1%;
+    width: 70%;
+    color: #ffffff; 
+    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Info_mousse h3 {
+    text-align: center;
+}
+.ingredientes {
+    text-align: center;
+}
+.Info_mousse .ingredientes::before {
+    content: none;
+    margin-right: 0; 
+}
+
+.Info_brownie {
+    text-align: justify; 
+    background: linear-gradient(90deg, #6e2800, #eca241);
+    border-radius:calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh);
+    border-style:outset; 
+    padding: 1%;
+    width: 70%;
+    color: #ffffff; 
+    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Info_brownie h3 {
+    text-align: center;
+}
+.Info_brownie .ingredientes::before {
+    content: none;
+    margin-right: 0; 
+}
+
+.Info_brigadeiro {
+    text-align: justify; 
+    background: linear-gradient(90deg, #6e2800, #eca241);
+    border-radius:calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh);
+    border-style:outset; 
+    padding: 1%;
+    width: 70%;
+    color: #ffffff; 
+    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Info_brigadeiro h3 {
+    text-align: center;
+}
+.Info_brigadeiro .ingredientes::before {
+    content: none;
+    margin-right: 0; 
+}
+
 .button-container3 {
     position: relative;
     justify-content: center;
@@ -490,6 +578,68 @@ h1 {
 }
 
 /* ------- Industria ------- */
+.Industry_cocoa {
+    text-align: justify; 
+    background: linear-gradient(90deg, #2e2e2e, #aaaaaa);
+    border-radius:calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh);
+    border-style:outset; 
+    padding: 2%;
+    width: 100%;
+    color: #ffffff; 
+}
+
+.Industry {
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 7%; 
+    width: 100px; 
+    height: 100px;
+    border: 5px solid transparent;
+    background-color: linear-gradient(45deg, #777777, #bdbdbd);
+    margin-bottom: 2%; 
+}
+
+.All_industryproducts {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 250px;
+}
+
+.All_industryproducts img {
+    border-radius: 50%; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+    border: 5px solid #9b6220;
+}
+
+.History{
+    text-align: justify; 
+    background: linear-gradient(90deg, #ffe7b5, #f0956b);
+    border-radius:calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh);
+    border-style:outset; 
+    padding: 2%;
+    width: 100%;
+    color: #000000; 
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+
+.Historys_img {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 150px;
+}
+.Historys_img img {
+    border-radius: 50%; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+    border: 5px solid #f1755f;
+}
+
+.main-content5 .destaque::before {
+    content: none;
+    margin-right: 0; 
+}
 
 footer {
     position: relative;

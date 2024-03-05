@@ -20,6 +20,15 @@ body {
     margin: 0; 
 }
 
+.cacaue {
+    position: absolute;
+    top: 2px; 
+    right: 10px; 
+    width: 80px; 
+    height: auto; 
+    z-index: 999; 
+} 
+
 .header-main nav ul {
     list-style-type: none;
     padding: 10px;
