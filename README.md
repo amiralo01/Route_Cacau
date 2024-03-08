@@ -133,6 +133,8 @@ npm start
 
 You can also run `node .` to skip the build step.
 
+To open the api screen, in addition to giving these commands, the link to open your screen will appear, but if it doesn't appear, just enter the link: `http://[::1]:3000/explorer/`.
+
 Open http://127.0.0.1:3000 in your browser.
 
 ## Rebuild the project

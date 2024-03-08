@@ -477,8 +477,7 @@ div .transport img {
 div.Mousse img,
 div.Brownie img,
 div.Brigadeiro img{
-    display: block;
-    width: 400px; 
+    width: 100%; 
     height: 70%; 
     margin: 0 auto;
     margin-top: 1%;
@@ -599,11 +598,16 @@ div.Brigadeiro img{
     margin-bottom: 2%; 
 }
 
+img{
+    width: 20%;
+    height: 20%;
+}
+.cream{
+    clip-path: circle(40% at 50% 50%);
+}
 .All_industryproducts {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 250px;
+    justify-content: space-evenly;
 }
 
 .All_industryproducts img {

@@ -1,7 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffe4d1, #ffffff);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .logo {
-    width: 90px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Isso garante que a proporção da imagem seja mantida */
-    margin-right: 5px; /* Ajuste a margem conforme necessário para separar a logo do texto */
+    width: 90px;
+    height: auto; 
+    margin-right: -5px; 
 }
 #map{
     height: 400px;
@@ -13,30 +27,20 @@
     border-radius: 10px; 
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ffe4d1, #ffffff);
-}
-
 .header-container {
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
     background: linear-gradient(to right, #000000, #463729);
     color: #fff;
 }
 
-.header-container h1 {
-    margin: 0; /* Remove a margem padrão do h1 */
-}
-
 .cacaue {
-    position: absolute;
     top: 2px; 
     right: 10px; 
     width: 80px; 
-    height: auto; 
-    z-index: 999; 
+    height: auto;  
 } 
 
 .Fornecedor_Cacau {
@@ -57,7 +61,6 @@ footer {
     background-color: #030303;
     color: #fff;
     text-align: center;
-    padding: 10px;
-    bottom: 0;
     width: 98,5%;
+    padding: 1%;
 }

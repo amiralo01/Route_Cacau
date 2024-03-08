@@ -88,3 +88,5 @@ function savelocal() {
     axios.post('http://[::1]:3000/localidades', local);
 
 }
+
+console.log(axios.post('http://[::1]:3000/fornecedors', data));
