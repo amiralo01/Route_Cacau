@@ -34,11 +34,10 @@ body {
 
 .cacaue {
     position: absolute;
-    top: 2px; /* Ajuste a distância do topo conforme necessário */
-    right: 10px; /* Ajuste a distância da direita conforme necessário */
-    width: 80px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Isso garante que a proporção da imagem seja mantida */
-    z-index: 999; /* Certifica-se de que a imagem do mascote esteja acima de outros elementos, se necessário */
+    top: 2px; 
+    right: 10px;
+    width: 80px; 
+    height: auto;
 }
 
 h1 {

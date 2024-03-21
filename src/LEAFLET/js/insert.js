@@ -16,7 +16,7 @@ async function fetchData() {
         
         const response = await axios.get('http://[::1]:3000/fornecedors');
         const data = response.data;
-        const listElement = document.querySelector('#fornecedor ul');
+        const listElement = document.querySelector('#fornecedor p');
         // Limpar qualquer conteúdo anterior
         listElement.innerHTML = '';
 
@@ -88,5 +88,3 @@ function savelocal() {
     axios.post('http://[::1]:3000/localidades', local);
 
 }
-
-console.log(axios.post('http://[::1]:3000/fornecedors', data));
