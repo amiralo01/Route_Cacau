@@ -1,8 +1,9 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
 import {Cacau} from './cacau.model';
+import { LocalidadeOrigemRepository } from '../repositories';
 
 @model()
-export class Localidade extends Entity {
+export class LocalidadeOrigem extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -14,7 +15,7 @@ export class Localidade extends Entity {
     type: 'string',
     required: true,
   })
-  nomeLocal: string;
+  nomeLocalOrigem: string;
 
   @property({
     type: 'string',
@@ -30,13 +31,13 @@ export class Localidade extends Entity {
   @hasMany(() => Cacau)
   Loc_Cacau: Cacau[];
 
-  constructor(data?: Partial<Localidade>) {
+  constructor(data?: Partial<LocalidadeOrigem>) {
     super(data);
   }
 }
 
-export interface LocalidadeRelations {
+export interface LocalidadeOrigemRelations {
   // describe navigational properties here
 }
 
-export type LocalidadeWithRelations = Localidade & LocalidadeRelations;
+export type LocalidadeWithRelations = LocalidadeOrigemRepository & LocalidadeOrigemRelations;

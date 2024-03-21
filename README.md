@@ -27,7 +27,7 @@
 
 | ![Autor 1](Img/autor_1.png) | ![Autor 2](Img/autor_2.png) |
 |-----------------------------|-----------------------------|
-|- **Name:** Amiraldo Filho   | - **Name:** Járlison Nevez  |
+|- **Name:** Amiraldo Filho   | - **Name:** Járlison Neves  |
 |- **Languages:** Python, JavaScript and C#. | - **Languages:** Java and JavaScript. |
 |- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/amiraldo-ferreira-28a84123b/) | - **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/jarlison-neves-87332129b/) |
 |- **GitHub:** [GitHub](https://github.com/amiralo01) | - **GitHub:** [GitHub](https://github.com/Jarlisonn) |

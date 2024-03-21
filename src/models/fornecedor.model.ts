@@ -1,5 +1,5 @@
 import {Entity, hasMany, model, property} from '@loopback/repository';
-import {Localidade} from './localidade.model';
+import {LocalidadeOrigem} from './localidadeOrigem.model';
 
 @model()
 export class Fornecedor extends Entity {
@@ -34,8 +34,8 @@ export class Fornecedor extends Entity {
   })
   img: String;
 
-  @hasMany(() => Localidade)
-  Loc_Fornecedor: Localidade[];
+  @hasMany(() => LocalidadeOrigem)
+  Loc_Fornecedor: LocalidadeOrigem[];
 
   constructor(data?: Partial<Fornecedor>) {
     super(data);
