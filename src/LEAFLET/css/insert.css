@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 90px; 
+    height: auto;  
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    background: linear-gradient(to right, #000000, #463729);
+    color: #fff;
+}
+
+.cacaue {
+    top: 2px; 
+    right: 10px; 
+    width: 80px; 
+    height: auto;  
+} 
+
+.header-main nav ul {
+    list-style-type: none;
+    padding: 1%;
+    margin-bottom: 4%;
+    text-align: center;
+    background-color:chocolate;
+}
+
+.header-main nav li {
+    margin: 0;
+}
+
+.header-main nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 100%;
+    transition: color 0.3s ease;
+    margin-top: 2%; 
+}
+
+.header-main nav a:hover {
+    color: #ffcc00; 
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fornecedor-group {
+    width: 30%;
+    margin-bottom: 4%;
+    margin-left: 5%;
+}
+
+.fornecedor-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5% 2%;
+    border-radius: 7%;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: none;
+}
+
+.fornecedor-group input[type="submit"]:hover {
+    background-color: #06680b;
+}
+
+.Fornecedor_info p {
+    width: 80%;
+    margin-bottom: 4%;
+    margin-left: 5%;
+}
+
+
+.form-group {
+    flex-basis: calc(30% - 5%);
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5% 2%;
+    border: none;
+    border-radius: 7%;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #06680b;
+}
+
+form {
+    width: 100%;
+}
+
+span {
+    margin-bottom: 100%;
+}
+
+footer {
+    background-color: #030303;
+    color: #fff;
+    text-align: center;
+    width: 98%;
+    padding: 1%;
+}
