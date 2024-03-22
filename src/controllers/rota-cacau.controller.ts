@@ -16,20 +16,20 @@ import {
   requestBody,
 } from '@loopback/rest';
 import {
-  LocalidadeOrigem,
+  Rota,
   Cacau,
 } from '../models';
-import {LocalidadeOrigemRepository} from '../repositories';
+import {RotaRepository} from '../repositories';
 
-export class LocalidadeCacauController {
+export class RotaCacauController {
   constructor(
-    @repository(LocalidadeOrigemRepository) protected localidadeRepository: LocalidadeOrigemRepository,
+    @repository(RotaRepository) protected rotaRepository: RotaRepository,
   ) { }
 
-  @get('/localidades/{id}/cacaus', {
+  @get('/rotas/{id}/cacaus', {
     responses: {
       '200': {
-        description: 'Array of Localidade has many Cacau',
+        description: 'Array of Rota has many Cacau',
         content: {
           'application/json': {
             schema: {type: 'array', items: getModelSchemaRef(Cacau)},
@@ -42,38 +42,38 @@ export class LocalidadeCacauController {
     @param.path.number('id') id: number,
     @param.query.object('filter') filter?: Filter<Cacau>,
   ): Promise<Cacau[]> {
-    return this.localidadeRepository.Loc_Cacau(id).find(filter);
+    return this.rotaRepository.rotas_cacau(id).find(filter);
   }
 
-  @post('/localidades/{id}/cacaus', {
+  @post('/rotas/{id}/cacaus', {
     responses: {
       '200': {
-        description: 'Localidade model instance',
+        description: 'Rota model instance',
         content: {'application/json': {schema: getModelSchemaRef(Cacau)}},
       },
     },
   })
   async create(
-    @param.path.number('id') id: typeof LocalidadeOrigem.prototype.idLocalidade,
+    @param.path.number('id') id: typeof Rota.prototype.idRota,
     @requestBody({
       content: {
         'application/json': {
           schema: getModelSchemaRef(Cacau, {
-            title: 'NewCacauInLocalidade',
+            title: 'NewCacauInRota',
             exclude: ['idCacau'],
-            optional: ['localidadeId']
+            optional: ['rotaId']
           }),
         },
       },
     }) cacau: Omit<Cacau, 'idCacau'>,
   ): Promise<Cacau> {
-    return this.localidadeRepository.Loc_Cacau(id).create(cacau);
+    return this.rotaRepository.rotas_cacau(id).create(cacau);
   }
 
-  @patch('/localidades/{id}/cacaus', {
+  @patch('/rotas/{id}/cacaus', {
     responses: {
       '200': {
-        description: 'Localidade.Cacau PATCH success count',
+        description: 'Rota.Cacau PATCH success count',
         content: {'application/json': {schema: CountSchema}},
       },
     },
@@ -90,13 +90,13 @@ export class LocalidadeCacauController {
     cacau: Partial<Cacau>,
     @param.query.object('where', getWhereSchemaFor(Cacau)) where?: Where<Cacau>,
   ): Promise<Count> {
-    return this.localidadeRepository.Loc_Cacau(id).patch(cacau, where);
+    return this.rotaRepository.rotas_cacau(id).patch(cacau, where);
   }
 
-  @del('/localidades/{id}/cacaus', {
+  @del('/rotas/{id}/cacaus', {
     responses: {
       '200': {
-        description: 'Localidade.Cacau DELETE success count',
+        description: 'Rota.Cacau DELETE success count',
         content: {'application/json': {schema: CountSchema}},
       },
     },
@@ -105,6 +105,6 @@ export class LocalidadeCacauController {
     @param.path.number('id') id: number,
     @param.query.object('where', getWhereSchemaFor(Cacau)) where?: Where<Cacau>,
   ): Promise<Count> {
-    return this.localidadeRepository.Loc_Cacau(id).delete(where);
+    return this.rotaRepository.rotas_cacau(id).delete(where);
   }
 }

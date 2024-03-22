@@ -42,7 +42,7 @@ export class TipoCacauCacauController {
     @param.path.number('id') id: number,
     @param.query.object('filter') filter?: Filter<Cacau>,
   ): Promise<Cacau[]> {
-    return this.tipoCacauRepository.tipo_cacau(id).find(filter);
+    return this.tipoCacauRepository.tipocacaus_cacau(id).find(filter);
   }
 
   @post('/tipo-cacaus/{id}/cacaus', {
@@ -67,7 +67,7 @@ export class TipoCacauCacauController {
       },
     }) cacau: Omit<Cacau, 'idCacau'>,
   ): Promise<Cacau> {
-    return this.tipoCacauRepository.tipo_cacau(id).create(cacau);
+    return this.tipoCacauRepository.tipocacaus_cacau(id).create(cacau);
   }
 
   @patch('/tipo-cacaus/{id}/cacaus', {
@@ -90,7 +90,7 @@ export class TipoCacauCacauController {
     cacau: Partial<Cacau>,
     @param.query.object('where', getWhereSchemaFor(Cacau)) where?: Where<Cacau>,
   ): Promise<Count> {
-    return this.tipoCacauRepository.tipo_cacau(id).patch(cacau, where);
+    return this.tipoCacauRepository.tipocacaus_cacau(id).patch(cacau, where);
   }
 
   @del('/tipo-cacaus/{id}/cacaus', {
@@ -105,6 +105,6 @@ export class TipoCacauCacauController {
     @param.path.number('id') id: number,
     @param.query.object('where', getWhereSchemaFor(Cacau)) where?: Where<Cacau>,
   ): Promise<Count> {
-    return this.tipoCacauRepository.tipo_cacau(id).delete(where);
+    return this.tipoCacauRepository.tipocacaus_cacau(id).delete(where);
   }
 }

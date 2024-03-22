@@ -1,5 +1,5 @@
-import {Entity, hasMany, model, property} from '@loopback/repository';
-import {LocalidadeOrigem} from './localidadeOrigem.model';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Rota} from './rota.model';
 
 @model()
 export class Fornecedor extends Entity {
@@ -20,22 +20,10 @@ export class Fornecedor extends Entity {
     type: 'string',
     required: true,
   })
-  email: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  senha: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
   img: String;
 
-  @hasMany(() => LocalidadeOrigem)
-  Loc_Fornecedor: LocalidadeOrigem[];
+  @hasMany(() => Rota)
+  rotas: Rota[];
 
   constructor(data?: Partial<Fornecedor>) {
     super(data);
