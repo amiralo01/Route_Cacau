@@ -21,7 +21,7 @@ import {
 } from '../models';
 import {LocalidadeRepository} from '../repositories';
 
-export class LocalidadeFinalRotaController {
+export class LocalidadeRotaController {
   constructor(
     @repository(LocalidadeRepository) protected localidadeRepository: LocalidadeRepository,
   ) { }
