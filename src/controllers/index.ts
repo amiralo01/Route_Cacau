@@ -6,7 +6,7 @@ export * from './localidade-intermediaria.controller';
 export * from './localidade.controller';
 export * from './rota.controller';
 export * from './fornecedor-rota.controller';
-export * from './localidadeFinal-rota.controller';
+export * from './localidade-rota.controller';
 export * from './localidadeOrigem-rota.controller';
 export * from './localidade-localidade-intermediaria.controller';
 export * from './rota-localidade-intermediaria.controller';
