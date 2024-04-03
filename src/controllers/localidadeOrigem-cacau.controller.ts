@@ -16,14 +16,14 @@ import {
   requestBody,
 } from '@loopback/rest';
 import {
-  Localidade,
+  LocalidadeOrigem,
   Cacau,
 } from '../models';
-import {LocalidadeRepository} from '../repositories';
+import {LocalidadeOrigemRepository} from '../repositories';
 
 export class LocalidadeCacauController {
   constructor(
-    @repository(LocalidadeRepository) protected localidadeRepository: LocalidadeRepository,
+    @repository(LocalidadeOrigemRepository) protected localidadeRepository: LocalidadeOrigemRepository,
   ) { }
 
   @get('/localidades/{id}/cacaus', {
@@ -54,7 +54,7 @@ export class LocalidadeCacauController {
     },
   })
   async create(
-    @param.path.number('id') id: typeof Localidade.prototype.idLocalidade,
+    @param.path.number('id') id: typeof LocalidadeOrigem.prototype.idLocalidade,
     @requestBody({
       content: {
         'application/json': {

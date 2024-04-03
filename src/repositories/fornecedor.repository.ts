@@ -1,8 +1,8 @@
 import {inject, Getter} from '@loopback/core';
 import {DefaultCrudRepository, repository, HasManyRepositoryFactory} from '@loopback/repository';
 import {MysqlDataSource} from '../datasources';
-import {Fornecedor, FornecedorRelations, Localidade} from '../models';
-import {LocalidadeRepository} from './localidade.repository';
+import {Fornecedor, FornecedorRelations, LocalidadeOrigem} from '../models';
+import {LocalidadeOrigemRepository} from './localidadeOrigem.repository';
 
 export class FornecedorRepository extends DefaultCrudRepository<
   Fornecedor,
@@ -10,10 +10,10 @@ export class FornecedorRepository extends DefaultCrudRepository<
   FornecedorRelations
 > {
 
-  public readonly Loc_Fornecedor: HasManyRepositoryFactory<Localidade, typeof Fornecedor.prototype.idFornecedor>;
+  public readonly Loc_Fornecedor: HasManyRepositoryFactory<LocalidadeOrigem, typeof Fornecedor.prototype.idFornecedor>;
 
   constructor(
-    @inject('datasources.Mysql') dataSource: MysqlDataSource, @repository.getter('LocalidadeRepository') protected localidadeRepositoryGetter: Getter<LocalidadeRepository>,
+    @inject('datasources.Mysql') dataSource: MysqlDataSource, @repository.getter('LocalidadeRepository') protected localidadeRepositoryGetter: Getter<LocalidadeOrigemRepository>,
   ) {
     super(Fornecedor, dataSource);
     this.Loc_Fornecedor = this.createHasManyRepositoryFactoryFor('Loc_Fornecedor', localidadeRepositoryGetter,);

@@ -1,6 +1,4 @@
-import {Entity, model, property, hasMany} from '@loopback/repository';
-import {Fornecedor} from './fornecedor.model';
-import {Rota} from './rota.model';
+import {Entity, model, property} from '@loopback/repository';
 
 @model({settings: {strict: false}})
 export class Cacau extends Entity {
@@ -16,9 +14,6 @@ export class Cacau extends Entity {
     required: true,
   })
   dataFab: Date;
-
-  @hasMany(() => Fornecedor, {through: {model: () => Rota}})
-  fornecedors: Fornecedor[];
 
   @property({
     type: 'number',

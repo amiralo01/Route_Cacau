@@ -17,7 +17,7 @@ import {
 } from '@loopback/rest';
 import {
   Fornecedor,
-  Localidade,
+  LocalidadeOrigem,
 } from '../models';
 import {FornecedorRepository} from '../repositories';
 
@@ -32,7 +32,7 @@ export class FornecedorLocalidadeController {
         description: 'Array of Fornecedor has many Localidade',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(Localidade)},
+            schema: {type: 'array', items: getModelSchemaRef(LocalidadeOrigem)},
           },
         },
       },
@@ -40,8 +40,8 @@ export class FornecedorLocalidadeController {
   })
   async find(
     @param.path.number('id') id: number,
-    @param.query.object('filter') filter?: Filter<Localidade>,
-  ): Promise<Localidade[]> {
+    @param.query.object('filter') filter?: Filter<LocalidadeOrigem>,
+  ): Promise<LocalidadeOrigem[]> {
     return this.fornecedorRepository.Loc_Fornecedor(id).find(filter);
   }
 
@@ -49,7 +49,7 @@ export class FornecedorLocalidadeController {
     responses: {
       '200': {
         description: 'Fornecedor model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Localidade)}},
+        content: {'application/json': {schema: getModelSchemaRef(LocalidadeOrigem)}},
       },
     },
   })
@@ -58,15 +58,15 @@ export class FornecedorLocalidadeController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Localidade, {
+          schema: getModelSchemaRef(LocalidadeOrigem, {
             title: 'NewLocalidadeInFornecedor',
             exclude: ['idLocalidade'],
             optional: ['fornecedorId']
           }),
         },
       },
-    }) localidade: Omit<Localidade, 'idLocalidade'>,
-  ): Promise<Localidade> {
+    }) localidade: Omit<LocalidadeOrigem, 'idLocalidade'>,
+  ): Promise<LocalidadeOrigem> {
     return this.fornecedorRepository.Loc_Fornecedor(id).create(localidade);
   }
 
@@ -83,12 +83,12 @@ export class FornecedorLocalidadeController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Localidade, {partial: true}),
+          schema: getModelSchemaRef(LocalidadeOrigem, {partial: true}),
         },
       },
     })
-    localidade: Partial<Localidade>,
-    @param.query.object('where', getWhereSchemaFor(Localidade)) where?: Where<Localidade>,
+    localidade: Partial<LocalidadeOrigem>,
+    @param.query.object('where', getWhereSchemaFor(LocalidadeOrigem)) where?: Where<LocalidadeOrigem>,
   ): Promise<Count> {
     return this.fornecedorRepository.Loc_Fornecedor(id).patch(localidade, where);
   }
@@ -103,7 +103,7 @@ export class FornecedorLocalidadeController {
   })
   async delete(
     @param.path.number('id') id: number,
-    @param.query.object('where', getWhereSchemaFor(Localidade)) where?: Where<Localidade>,
+    @param.query.object('where', getWhereSchemaFor(LocalidadeOrigem)) where?: Where<LocalidadeOrigem>,
   ): Promise<Count> {
     return this.fornecedorRepository.Loc_Fornecedor(id).delete(where);
   }

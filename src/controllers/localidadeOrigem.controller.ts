@@ -17,33 +17,33 @@ import {
   requestBody,
   response,
 } from '@loopback/rest';
-import {Localidade} from '../models';
-import {LocalidadeRepository} from '../repositories';
+import {LocalidadeOrigem} from '../models';
+import {LocalidadeOrigemRepository} from '../repositories';
 
 export class LocalidadeController {
   constructor(
-    @repository(LocalidadeRepository)
-    public localidadeRepository : LocalidadeRepository,
+    @repository(LocalidadeOrigemRepository)
+    public localidadeRepository : LocalidadeOrigemRepository,
   ) {}
 
   @post('/localidades')
   @response(200, {
     description: 'Localidade model instance',
-    content: {'application/json': {schema: getModelSchemaRef(Localidade)}},
+    content: {'application/json': {schema: getModelSchemaRef(LocalidadeOrigem)}},
   })
   async create(
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Localidade, {
+          schema: getModelSchemaRef(LocalidadeOrigem, {
             title: 'NewLocalidade',
             exclude: ['idLocalidade'],
           }),
         },
       },
     })
-    localidade: Omit<Localidade, 'idLocalidade'>,
-  ): Promise<Localidade> {
+    localidade: Omit<LocalidadeOrigem, 'idLocalidade'>,
+  ): Promise<LocalidadeOrigem> {
     return this.localidadeRepository.create(localidade);
   }
 
@@ -53,7 +53,7 @@ export class LocalidadeController {
     content: {'application/json': {schema: CountSchema}},
   })
   async count(
-    @param.where(Localidade) where?: Where<Localidade>,
+    @param.where(LocalidadeOrigem) where?: Where<LocalidadeOrigem>,
   ): Promise<Count> {
     return this.localidadeRepository.count(where);
   }
@@ -65,14 +65,14 @@ export class LocalidadeController {
       'application/json': {
         schema: {
           type: 'array',
-          items: getModelSchemaRef(Localidade, {includeRelations: true}),
+          items: getModelSchemaRef(LocalidadeOrigem, {includeRelations: true}),
         },
       },
     },
   })
   async find(
-    @param.filter(Localidade) filter?: Filter<Localidade>,
-  ): Promise<Localidade[]> {
+    @param.filter(LocalidadeOrigem) filter?: Filter<LocalidadeOrigem>,
+  ): Promise<LocalidadeOrigem[]> {
     return this.localidadeRepository.find(filter);
   }
 
@@ -85,12 +85,12 @@ export class LocalidadeController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Localidade, {partial: true}),
+          schema: getModelSchemaRef(LocalidadeOrigem, {partial: true}),
         },
       },
     })
-    localidade: Localidade,
-    @param.where(Localidade) where?: Where<Localidade>,
+    localidade: LocalidadeOrigem,
+    @param.where(LocalidadeOrigem) where?: Where<LocalidadeOrigem>,
   ): Promise<Count> {
     return this.localidadeRepository.updateAll(localidade, where);
   }
@@ -100,14 +100,14 @@ export class LocalidadeController {
     description: 'Localidade model instance',
     content: {
       'application/json': {
-        schema: getModelSchemaRef(Localidade, {includeRelations: true}),
+        schema: getModelSchemaRef(LocalidadeOrigem, {includeRelations: true}),
       },
     },
   })
   async findById(
     @param.path.number('id') id: number,
-    @param.filter(Localidade, {exclude: 'where'}) filter?: FilterExcludingWhere<Localidade>
-  ): Promise<Localidade> {
+    @param.filter(LocalidadeOrigem, {exclude: 'where'}) filter?: FilterExcludingWhere<LocalidadeOrigem>
+  ): Promise<LocalidadeOrigem> {
     return this.localidadeRepository.findById(id, filter);
   }
 
@@ -120,11 +120,11 @@ export class LocalidadeController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Localidade, {partial: true}),
+          schema: getModelSchemaRef(LocalidadeOrigem, {partial: true}),
         },
       },
     })
-    localidade: Localidade,
+    localidade: LocalidadeOrigem,
   ): Promise<void> {
     await this.localidadeRepository.updateById(id, localidade);
   }
@@ -135,7 +135,7 @@ export class LocalidadeController {
   })
   async replaceById(
     @param.path.number('id') id: number,
-    @requestBody() localidade: Localidade,
+    @requestBody() localidade: LocalidadeOrigem,
   ): Promise<void> {
     await this.localidadeRepository.replaceById(id, localidade);
   }

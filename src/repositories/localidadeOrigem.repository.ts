@@ -1,21 +1,21 @@
 import {inject, Getter} from '@loopback/core';
 import {DefaultCrudRepository, repository, HasManyRepositoryFactory} from '@loopback/repository';
 import {MysqlDataSource} from '../datasources';
-import {Localidade, LocalidadeRelations, Cacau} from '../models';
+import {LocalidadeOrigem, LocalidadeOrigemRelations, Cacau} from '../models';
 import {CacauRepository} from './cacau.repository';
 
-export class LocalidadeRepository extends DefaultCrudRepository<
-  Localidade,
-  typeof Localidade.prototype.idLocalidade,
-  LocalidadeRelations
+export class LocalidadeOrigemRepository extends DefaultCrudRepository<
+  LocalidadeOrigem,
+  typeof LocalidadeOrigem.prototype.idLocalidade,
+  LocalidadeOrigemRelations
 > {
 
-  public readonly Loc_Cacau: HasManyRepositoryFactory<Cacau, typeof Localidade.prototype.idLocalidade>;
+  public readonly Loc_Cacau: HasManyRepositoryFactory<Cacau, typeof LocalidadeOrigem.prototype.idLocalidade>;
 
   constructor(
     @inject('datasources.Mysql') dataSource: MysqlDataSource, @repository.getter('CacauRepository') protected cacauRepositoryGetter: Getter<CacauRepository>,
   ) {
-    super(Localidade, dataSource);
+    super(LocalidadeOrigem, dataSource);
     this.Loc_Cacau = this.createHasManyRepositoryFactoryFor('Loc_Cacau', cacauRepositoryGetter,);
     this.registerInclusionResolver('Loc_Cacau', this.Loc_Cacau.inclusionResolver);
   }
