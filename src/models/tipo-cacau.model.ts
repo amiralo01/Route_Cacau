@@ -1,7 +1,7 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
 import {Cacau} from './cacau.model';
 
-@model({settings: {strict: false}})
+@model()
 export class TipoCacau extends Entity {
   @property({
     type: 'number',
@@ -14,15 +14,10 @@ export class TipoCacau extends Entity {
     type: 'string',
     required: true,
   })
-  descricao: string;
+  nome: string;
 
   @hasMany(() => Cacau)
-  tipo_cacau: Cacau[];
-  // Define well-known properties here
-
-  // Indexer property to allow additional data
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
+  tipocacaus_cacau: Cacau[];
 
   constructor(data?: Partial<TipoCacau>) {
     super(data);

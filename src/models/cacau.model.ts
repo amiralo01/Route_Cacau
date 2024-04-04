@@ -1,6 +1,6 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model({settings: {strict: false}})
+@model()
 export class Cacau extends Entity {
   @property({
     type: 'number',
@@ -24,6 +24,11 @@ export class Cacau extends Entity {
     type: 'number',
   })
   tipoCacauId?: number;
+
+  @property({
+    type: 'number',
+  })
+  rotaId?: number;
   // Define well-known properties here
 
   // Indexer property to allow additional data
