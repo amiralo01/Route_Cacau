@@ -20,6 +20,18 @@ export class Fornecedor extends Entity {
     type: 'string',
     required: true,
   })
+  email: string;
+
+  @property({
+    type: 'Date',
+    required: true,
+  })
+  dataColeta: Date;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
   img: String;
 
   @hasMany(() => Rota)
