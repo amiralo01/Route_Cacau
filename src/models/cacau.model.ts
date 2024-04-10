@@ -10,7 +10,7 @@ export class Cacau extends Entity {
   idCacau?: number;
 
   @property({
-    type: 'Date',
+    type: 'date',
     required: true,
   })
   dataFab: Date;
@@ -33,7 +33,7 @@ export class Cacau extends Entity {
 
   // Indexer property to allow additional data
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
+  // [prop: string]: any;
 
   constructor(data?: Partial<Cacau>) {
     super(data);

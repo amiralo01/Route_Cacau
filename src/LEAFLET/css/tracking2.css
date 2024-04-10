@@ -245,3 +245,12 @@ footer {
     width: 98,5%;
     padding: 1%;
 }
+
+/*Para o popup no arquivo javascript*/
+.popup-content {
+    max-width: 300px; /* Defina a largura máxima desejada */
+    height: auto; /* Altura automática */
+}
+.popup-image {
+    max-width: 100%; /* Imagem responsiva */
+}
