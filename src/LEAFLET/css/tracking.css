@@ -90,7 +90,10 @@ body {
 .titlelocal{
     text-align: center;
 }
-
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
 .Image_fornc {
     border-radius: 50%;
     width: 100%;

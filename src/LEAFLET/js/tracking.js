@@ -106,4 +106,42 @@ async function fetchData() {
     console.error('Erro ao obter dados do Fornecedor:', error);
     }
 }
+
+async function getResourceJson(uri){
+    let result = await fetch(`http://127.0.0.1:3000/${uri}`, {
+        method: 'GET',
+    })
+    return result.json()
+}
+
+async function postResourceJson(uri, data){
+    let result = await fetch(`http://127.0.0.1:3000/${uri}`, {
+        method: 'POST',
+        body: typeof data === 'string' ? data : JSON.stringify(data)
+    })
+    return result.json()
+}
+
+async function fetchDataRota( cb, idRota ){
+
+    let rota = await getResourceJson('rotas/'+idRota)
+    let fornecedor = await getResourceJson(`fornecedors/${rota.fornecedorId}`)
+    let localidadeOrigem = await getResourceJson('localidades/' +rota.localidadeOrigem )
+    let localidadeFinal = await getResourceJson('localidades/' +rota.localidadeFinal )
+    rota.fornecedor = fornecedor;
+    rota.localidades = { localidadeOrigem, localidadeFinal }
+    cb(rota)
+}
+
 fetchData();
+
+fetchDataRota(function(rota){
+    let fornecedor = rota.fornecedor
+    const input = document.querySelector('#nome_fornecedor')
+    document.querySelector('#imagem_fornecedor').setAttribute('src', fornecedor.img )
+    document.querySelector('#localidade_origem').textContent = Object.values(rota.localidades.localidadeOrigem).join(', ') 
+    document.querySelector('#localidade_final').textContent = Object.values(rota.localidades.localidadeFinal).join(', ') 
+
+    console.log(rota)
+    input.value = fornecedor.nome
+}, new URLSearchParams(window.location.search).get('rota'))
