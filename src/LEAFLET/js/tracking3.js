@@ -1,12 +1,13 @@
 //Cordenadas do Ponto A = Caminhão
-const coordTruck = [-2.415511, -54.736649];
+const coordTruck = [-2.41567, -54.73741];
 // Coordenadas do Ponto B = Loja
 const coordStore = [-2.445985, -54.757458];
 //Cordenadas do Ponto C = Fornecedor
 const coordFrncd = [-14.835173, -39.226597];
+// Coordenadas do ponto Inicial
+const coordInicial = [-2.433986, -54.757748]
 
-
-var map = L.map('map').setView(coordStore, 14);
+var map = L.map('map').setView(coordInicial, 14);
 
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -63,6 +64,18 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 
+//Para a linha no mapa
+
+L.Routing.control({
+    waypoints: [
+      L.latLng(coordFrncd),
+      L.latLng(coordTruck),
+      L.latLng(coordStore)
+    ]
+  }).addTo(map);
+
+
+// Para puxar as informações do banco de dados
 async function fetchData() {
     try {
                 

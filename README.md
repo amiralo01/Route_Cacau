@@ -9,14 +9,14 @@
 ![Static Badge](https://img.shields.io/badge/CSS3-%231572B6?style=plastic&logo=css3&color=black)
 ![Static Badge](https://img.shields.io/badge/Leaflet-%23199900?style=plastic&logo=leaflet&color=black)
 ![Static Badge](https://img.shields.io/badge/loopback-%233F5DFF?style=plastic&logo=loopback&logoColor=%233F5DFF&color=black)
-![Static Badge](https://img.shields.io/badge/mysql-%234479A1?style=plastic&logo=mysql&logoColor=%234479A1&color=black)
+![Static Badge](https://img.shields.io/badge/postgresql-%234169E1?style=plastic&logo=postgresql&labelColor=black&color=black)
 
 
 ![GitHub top language](https://img.shields.io/github/languages/top/amiralo01/Route_Cacau?style=plastic&color=red)
 ![GitHub](https://img.shields.io/github/license/amiralo01/Route_Cacau?style=plastic&color=purple)
 ![GitHub language count](https://img.shields.io/github/languages/count/amiralo01/Route_Cacau?style=plastic&color=black)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/amiralo01/Route_Cacau/main?style=plastic&color=green)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/amiralo01/Route_Cacau/Login_Jarlison?style=plastic&color=blue)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/amiralo01/Route_Cacau/Route_Cacau_API?display_timestamp=author&style=plastic&color=green)
 ![GitHub followers](https://img.shields.io/github/followers/amiralo01?style=plastic&logo=github&color=cyan)
 
 > Status: Developing ⌛
@@ -96,10 +96,9 @@ If you need to have more than one version of Node.js on your machine, check out 
 
 To be able to use the Leaflet tool, you must use the ```npm install leaflet``` command in your terminal to install the necessary dependencies on your machine. If you still have any, you can visit the [tours page](https://leafletjs.com/examples.html) of leaflet to solve them.
 
-## MySQL
+## PostgreSQL
 
-Para poder utilizar a base de dados MySQL você precisa realizar a sua instalação em sua máquina vá até o site do [MySQL](https://dev.mysql.com/downloads/) faça o dowload  da versão compatível com sua máquina e instale-a, em seguida para visualizar o banco é recomendável utiliza o [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) e realizar todo o processo de configuração dele para instalá-lo.
-Outra opção também para visualizar e ativar o banco de dados mysql é utilizar a ferramenta [XAMPP](https://www.apachefriends.org/pt_br/download.html) na qual você poderá visualizar como administrador e sua porta local.
+To be able to use the PostgreSQL database you need to install it on your machine, go to the [PostgreSQL](https://www.postgresql.org/download/) website download the version compatible with your machine and install -a, then to view the database it is recommended to use [PGAdmin](https://www.pgadmin.org/download/) and carry out the entire configuration process to install it. To learn more about how the database works, study the PostgreSQL [Documentation](https://www.postgresql.org/docs/).
 
 ## routecacau_api
 
