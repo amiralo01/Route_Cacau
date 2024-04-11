@@ -51,10 +51,33 @@ body {
     border-radius: 10px; 
 }
 
+.wrapper {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column; /* Altera para uma coluna em telas menores */
+    }
+
+    /* Estilos para a div Fornecedor_Cacau em telas menores */
+    .Fornecedor_Cacau,
+    .Localidades {
+        width: 100%; /* Ocupa toda a largura disponível em telas menores */
+    }
+}
+
+.Fornecedor_Cacau,
+.Localidades {
+    flex: 1;
+    margin: 0.5%;
+}
+
+
 .Fornecedor_Cacau {
-    background-color: #57d357; 
+    background: linear-gradient(90deg, #3f9915, #50850b); 
     padding: 1%;
-    border-radius: 2%;
+    border-radius:calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh);
     max-width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -63,8 +86,9 @@ body {
     color: #fff;
 }
 
-.fornecedor{
-    display:flex;
+.titleFrnc,
+.titlelocal{
+    text-align: center;
 }
 
 .Image_fornc {
@@ -154,9 +178,9 @@ body {
 }
 
 .Localidades{
-    background-color: #298aca;
+    background: linear-gradient(90deg, #19598d, #2927a1);
     padding: 1%;
-    border-radius: 2%;
+    border-radius:calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh);
     max-width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -220,4 +244,13 @@ footer {
     text-align: center;
     width: 98,5%;
     padding: 1%;
+}
+
+/*Para o popup no arquivo javascript*/
+.popup-content {
+    max-width: 300px; /* Defina a largura máxima desejada */
+    height: auto; /* Altura automática */
+}
+.popup-image {
+    max-width: 100%; /* Imagem responsiva */
 }

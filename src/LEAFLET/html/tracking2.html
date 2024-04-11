@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tracking2</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
     <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css">
     <link rel="stylesheet" href="../css/tracking2.css">
 
     <script src="../node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
 </head>
 
 <body>
     <header>
         <div class="header-container">
             <img src="../../../Img/Route_logo.png" alt="Logo do Route Cacau" class="logo">
-            <h1>Rastreamento de Cacau de Cacauway</h1>
+            <h3>Rastreamento de Cacau de Cacauway</h3>
             <div class="sub-header">
                 <img src="../../../Img/Mascote.png" alt="mascote" class="cacaue">
             </div>
@@ -26,82 +31,87 @@
     <div class="container">
         <div id="map"></div>
 
-        <div class="Fornecedor_Cacau">
-            <div id="fornecedor">
-                <div class="titleFrnc">
-                    <h1>Fornecedor</h1>
-                </div>
-                <div class="Image_fornc" id="img">
-                    <!--Imagem do Fornecedor-->
-                </div>
-                <div class="container_fornc">
-                    <div class="name_fornc">
-                        <h3>Nome do Fornecedor:</h3>
-                        <div class="Name_forncedor" id="name">
-                            <ul>
-                                <!---Nome do fornecedor-->
-                            </ul>
+        <div class="containers">
+            <div class="wrapper">
+                <div class="Fornecedor_Cacau">
+                    <div id="fornecedor">
+                        <div class="titleFrnc">
+                            <h1>Fornecedor</h1>
+                        </div>
+                        <div class="Image_fornc" id="img">
+                            <!--Imagem do Fornecedor-->
+                        </div>
+                        <div class="container_fornc">
+                            <div class="name_fornc">
+                                <h3>Nome do Fornecedor:</h3>
+                                <div class="Name_forncedor" id="name">
+                                    <ul>
+                                        <!---Nome do fornecedor-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container2_fornc">
+                            <div class="Email_fornc">
+                                <h3>E-mail do Fornecedor:</h3>
+                                <div class="Email_fornecedor" id="email">
+                                    <ul>
+                                        <!---Email do fornecedor-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="Data_coleta">
+                                <h3>Data de coleta:</h3>
+                                <div class="Data_da_coleta" id="data">
+                                    <ul>
+                                        <!--Data em que foi coletado o cacau-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="type_cacau">
+                                <h3>Tipo de cacau:</h3>
+                                <div class="tipo_de_cacau" id="type">
+                                    <ul>
+                                        <!--Descrição do tipo de cacau-->
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="container2_fornc">
-                    <div class="Email_fornc">
-                        <h3>E-mail do Fornecedor:</h3>
-                        <div class="Email_fornecedor" id="email">
+                <div class="Localidades">
+                    <div class="titlelocal">
+                        <h1>Localidades do Cacau</h1>
+                    </div>
+                    <div class="Localidade">
+                        <h3>Localidade Inicial:</h3>
+                        <div class="localidade_do_cacau" id="localidade">
                             <ul>
-                                <!---Email do fornecedor-->
+                                <!--Localidade Inicial do Cacau-->
                             </ul>
                         </div>
                     </div>
-                    <div class="Data_coleta">
-                        <h3>Data de coleta:</h3>
-                        <div class="Data_da_coleta" id="data">
+                    <div class="LocalidadeIntd">
+                        <h3>Localidade Intermediária:</h3>
+                        <div class="Localidade_Intd" id="localidade_intermediaria">
+                            <!-- As informações serão inseridas aqui -->
+                        </div>
+                    </div>
+                    <div class="LocalidadeF">
+                        <h3>Localidade Final:</h3>
+                        <div class="Localidade_F">
                             <ul>
-                                <!--Data em que foi coletado o cacau-->
+                                <!--Localidade Final do Cacau-->
                             </ul>
                         </div>
                     </div>
-                    <div class="type_cacau">
-                        <h3>Tipo de cacau:</h3>
-                        <div class="tipo_de_cacau" id="type">
-                            <ul>
-                                <!--Descrição do tipo de cacau-->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Localidades">
-            <div class="titlelocal">
-                <h1>Localidades do Cacau</h1>
-            </div>
-            <div class="Localidade">
-                <h3>Localidade Inicial:</h3>
-                <div class="localidade_do_cacau" id="localidade">
-                    <ul>
-                        <!--Localidade Inicial do Cacau-->
-                    </ul>
-                </div>
-            </div>
-            <div class="LocalidadeIntd">
-                <h3>Localidade Intermediária:</h3>
-                <div class="Localidade_Intd" id="localidade_intermediaria">
-                    <!-- As informações serão inseridas aqui -->
-                </div>
-            </div>
-            <div class="LocalidadeF">
-                <h3>Localidade Final:</h3>
-                <div class="Localidade_F">
-                    <ul>
-                        <!--Localidade Final do Cacau-->
-                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="../js/tracking.js"></script>
+
+    <script src="../js/tracking2.js"></script>
 
     <footer>
         <p>&copy; 2023 Rastreamento de Cacau. Todos os direitos reservados.</p>
