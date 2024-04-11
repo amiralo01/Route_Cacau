@@ -7,6 +7,8 @@ function savefornecedor() {
     };
 
     axios.post('http://[::1]:3000/fornecedors', data);
+    alert('Cadastro Realizado!');
+    
 
 }
 
@@ -64,6 +66,7 @@ function savecocoa() {
     };
 
     axios.post('http://[::1]:3000/cacaus', cocoa);
+    alert('Cadastro Realizado!');
 
 }
 
@@ -76,5 +79,8 @@ function savelocal() {
     };
 
     axios.post('http://[::1]:3000/localidades', local);
+    alert('Cadastro Realizado!');
 
 }
+
+
