@@ -18,11 +18,6 @@ export class Cacau extends Entity {
   @property({
     type: 'number',
   })
-  localidadeId?: number;
-
-  @property({
-    type: 'number',
-  })
   tipoCacauId?: number;
 
   @property({

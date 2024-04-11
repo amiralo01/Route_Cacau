@@ -1,13 +1,14 @@
-function savedata() {
+function savefornecedor() {
 
     const data = {
         nome: document.getElementById('nome').value,
         email: document.getElementById('email').value,
-        senha: document.getElementById('senha').value,
         img: document.getElementById('img').value,
     };
 
     axios.post('http://[::1]:3000/fornecedors', data);
+    alert('Cadastro Realizado!');
+    
 
 }
 
@@ -60,31 +61,26 @@ fetchData();
 function savecocoa() {
     const cocoa = {
         dataFab: new Date(document.getElementById('dataFab').value),
-        localidadeId: parseFloat(document.getElementById('localidadeId').value),
         tipoCacauId: parseFloat(document.getElementById('tipoCacauId').value),
+        rotaId: parseFloat(document.getElementById('rotaId').value),
     };
 
     axios.post('http://[::1]:3000/cacaus', cocoa);
-
-}
-
-function savecocoatype() {
-    const typecocoa = {
-        descricao: document.getElementById('descricao').value,
-    };
-
-    axios.post('http://[::1]:3000/tipo-cacaus', typecocoa);
+    alert('Cadastro Realizado!');
 
 }
 
 function savelocal() {
     const local = {
-        nomeLocal: document.getElementById('nomeLocal').value,
+        avenida: document.getElementById('avenida').value,
+        bairro: document.getElementById('bairro').value,
         cidade: document.getElementById('cidade').value,
-        fornecedorId: parseFloat(document.getElementById('fornecedorId').value),
 
     };
 
     axios.post('http://[::1]:3000/localidades', local);
+    alert('Cadastro Realizado!');
 
 }
+
+
