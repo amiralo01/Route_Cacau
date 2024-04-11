@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="../css/insert.css">
 
-    <title>Insert Funcionario</title>
+    <title>Cadastro</title>
 
 </head>
 
@@ -32,12 +32,11 @@
     <div class="container">
 
         <div class="fornecedor-group">
-            <form onsubmit="savedata(); return false;">
+            <form onsubmit="savefornecedor(); return false;">
                 <h2> Cadastro de Fornecedor</h2>
-                <p>nome: <input id="nome" type="text"></p>
-                <p>email: <input id="email" type="email"></p>
-                <p>senha: <input id="senha" type="text"></p>
-                <p>img: <input id="img" type="text"></p>
+                <p>Nome: <input id="nome" type="text"></p>
+                <p>Email: <input id="email" type="text"></p>
+                <p>Foto de Perfil: <input id="img" type="text"></p>
         
                 <input type="submit"/>
             </form>
@@ -47,17 +46,8 @@
             <form onsubmit="savecocoa(); return false;">
                 <h2> Cadastro de cacaus</h2>
                 <p>Data da coleta: <input id="dataFab" type="date"></p>
-                <p>Localidade: <input id="localidadeId" type="number"></p>
                 <p>Tipo: <input id="tipoCacauId" type="number"></p>
-        
-                <input type="submit"/>
-            </form>
-        </div>
-
-        <div class="form-group">
-            <form onsubmit="savecocoatype(); return false;">
-                <h2> Cadastro de Tipo de Cacau </h2>
-                <p>Descrição: <input id="descricao" type="text"></p>
+                <p>Rota: <input id="rotaId" type="number"></p>
         
                 <input type="submit"/>
             </form>
@@ -66,9 +56,9 @@
         <div class="form-group">
             <form onsubmit="savelocal(); return false;">
                 <h2> Cadastro de Localidade </h2>
-                <p>Nome: <input id="nomeLocal" type="text"></p>
+                <p>Avenida: <input id="avenida" type="text"></p>
+                <p>Bairro: <input id="bairro" type="text"></p>
                 <p>Cidade: <input id="cidade" type="text"></p>
-                <p>Fornecedor: <input id="fornecedorId" type="number"></p>
         
                 <input type="submit"/>
             </form>

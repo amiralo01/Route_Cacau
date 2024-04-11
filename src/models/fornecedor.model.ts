@@ -23,12 +23,6 @@ export class Fornecedor extends Entity {
   email: string;
 
   @property({
-    type: 'Date',
-    required: true,
-  })
-  dataColeta: Date;
-
-  @property({
     type: 'string',
     required: true,
   })

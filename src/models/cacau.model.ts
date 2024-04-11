@@ -10,15 +10,10 @@ export class Cacau extends Entity {
   idCacau?: number;
 
   @property({
-    type: 'Date',
+    type: 'date',
     required: true,
   })
   dataFab: Date;
-
-  @property({
-    type: 'number',
-  })
-  localidadeId?: number;
 
   @property({
     type: 'number',
