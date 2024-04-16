@@ -104,6 +104,7 @@ async function getResourceJson(uri){
     let result = await fetch(`http://127.0.0.1:3000/${uri}`, {
         method: 'GET',
     })
+    if(result.status > 299) return Promise.reject(await result.json())
     return result.json()
 }
 
@@ -117,13 +118,20 @@ async function postResourceJson(uri, data){
 
 async function fetchDataRota( cb, idRota ){
 
-    let rota = await getResourceJson('rotas/'+idRota)
+    let rota = await getResourceJson('rotas/'+idRota + '?filter=' + JSON.stringify({ include:["rotas_cacau" , "rotas_locInter"] }))
     let fornecedor = await getResourceJson(`fornecedors/${rota.fornecedorId}`)
     let localidadeOrigem = await getResourceJson('localidades/' +rota.localidadeOrigem )
     let localidadeFinal = await getResourceJson('localidades/' +rota.localidadeFinal )
     rota.fornecedor = fornecedor;
+    const localidadeInter = rota.rotas_locInter.map(loc => { return loc.idLocalidadeInter; }) 
+    let locoIntermediarias = []
+    for(let loc of localidadeInter){
+        let _locoIntermediarias = await getResourceJson(`/localidades/${loc}`)
+        locoIntermediarias.push(_locoIntermediarias)
+    }
     rota.localidades = { localidadeOrigem, localidadeFinal }
-    cb(rota)
+    rota.localidadesIntermediarias = locoIntermediarias
+    typeof cb === 'function' && cb(rota)
 }
 
 fetchData();
@@ -131,10 +139,28 @@ fetchData();
 fetchDataRota(function(rota){
     let fornecedor = rota.fornecedor
     const input = document.querySelector('#nome_fornecedor')
-    document.querySelector('#imagem_fornecedor').setAttribute('src', fornecedor.img )
-    document.querySelector('#localidade_origem').textContent = Object.values(rota.localidades.localidadeOrigem).join(', ') 
-    document.querySelector('#localidade_final').textContent = Object.values(rota.localidades.localidadeFinal).join(', ') 
 
-    console.log(rota)
-    input.value = fornecedor.nome
+    document.querySelector('#imagem_fornecedor').setAttribute('src', fornecedor.img )
+    document.querySelector('#localidade_origem').textContent = Object.values(rota.localidades.localidadeOrigem).slice(1).join(', ') 
+    document.querySelector('#localidade_final').textContent = Object.values(rota.localidades.localidadeFinal).slice(1).join(', ') 
+    document.querySelector('#email').textContent = fornecedor.email
+
+
+    const localidadediv = document.querySelector('#localidade_intermediaria')
+    let loca = createLocalidades(rota.localidadesIntermediarias)
+    localidadediv.appendChild(loca)
+    input.textContent = fornecedor.nome
 }, new URLSearchParams(window.location.search).get('rota'))
+
+function createLocalidades(localidades){
+    const ul = document.createElement('ul')
+    ul.style = "display: block;";
+    const lis = new Array(localidades.length).fill(null).map(() => document.createElement('li'))
+    lis.forEach((v, index) =>{
+        v.textContent = Object.values(localidades[index]).slice(1).join(', ')
+        v.style = "display: block; margin-bottom:10px;"
+        ul.appendChild(v)
+    })
+    
+    return ul
+}
