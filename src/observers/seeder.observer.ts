@@ -37,8 +37,6 @@ export class SeederObserver implements LifeCycleObserver {
    * This method will be invoked when the application starts.
    */
   async start(): Promise<void> {
-    if(!process.env.ENV) return;
-    if(process.env.ENV.toLocaleLowerCase() !== 'test') return;
 
     if((await this.rotaRepository.count()).count > 0 ) return;
 
