@@ -74,6 +74,8 @@ export class SeederObserver implements LifeCycleObserver {
     await this.rotaRepository.rotas_locInter(rota.idRota).create({ localidadeInter: localidade2.idLocalidade })
     await this.rotaRepository.rotas_locInter(rota.idRota).create({ localidadeInter: localidade3.idLocalidade })
     const tipo = await this.tipoCacauRepository.create({ nome: '50% cacau' })
+    const tipo2 = await this.tipoCacauRepository.create({ nome: '25% cacau' })
+    const tipo3 = await this.tipoCacauRepository.create({ nome: '60% cacau' })
     await this.cacauRepository.create({ dataFab: new Date(), rotaId: rota.idRota, tipoCacauId: tipo.idTipo })
   }
 
