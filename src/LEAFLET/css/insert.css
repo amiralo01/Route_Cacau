@@ -63,19 +63,30 @@ body {
 }
 
 .fornecedor-group {
+    color: #fff;
+    background: linear-gradient(90deg, #28351b, #374938);
+    border-radius:calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh);
     width: 30%;
-    margin-bottom: 4%;
+    margin-bottom: 13%;
     margin-left: 5%;
+}
+.fornecedor-group h2{
+    margin-top: 4%;
+    text-align: center;
+}
+.fornecedor-group p{
+    margin-left: 4%;
 }
 
 .fornecedor-group input[type="submit"] {
     background-color: #4CAF50;
     color: white;
     padding: 0.5% 2%;
-    border-radius: 7%;
+    border-radius:calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh);
     text-align: center;
     cursor: pointer;
     margin-top: 2%;
+    margin-left: 4%;
     margin-bottom: 2%;
     border: none;
 }
@@ -84,18 +95,42 @@ body {
     background-color: #06680b;
 }
 
-.Fornecedor_info p {
-    width: 80%;
-    margin-bottom: 4%;
-    margin-left: 5%;
+.Fornecedor_info {
+    width: 30%;
+    background: linear-gradient(90deg, #362607, #703005);
+    color: white;
+    padding: 0.5% 2%;
+    border-radius:calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh);
+    cursor: pointer;
+    margin: 2% auto;
+    border: none;
 }
 
+.Fornecedor_info p {
+    width: 100%;
+    margin-bottom: 2%;
+}
+.Fornecedor_info h2{
+    margin-bottom: 1%;
+    margin-top: 1%;
+    text-align: center;
+}
 
 .form-group {
+    background: linear-gradient(90deg, #28351b, #374938);
+    border-radius:calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh);
+    color: #fff;
     flex-basis: calc(30% - 5%);
     margin-right: 5%;
     margin-left: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 13%;
+}
+.form-group h2{
+    text-align: center;
+    margin-top: 4%;
+}
+.form-group p{
+    margin-left: 4%;
 }
 
 .form-group input[type="submit"] {
@@ -103,10 +138,11 @@ body {
     color: white;
     padding: 0.5% 2%;
     border: none;
-    border-radius: 7%;
+    border-radius:calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh);
     text-align: center;
     cursor: pointer;
     margin-top: 2%;
+    margin-left: 4%;
     margin-bottom: 2%;
 }
 
@@ -116,6 +152,45 @@ body {
 
 form {
     width: 100%;
+}
+
+.infococoa{
+    background: linear-gradient(90deg, #3f9915, #50850b); 
+    padding: 1%;
+    border-radius:calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh) calc(5px + 5vh);
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-height: auto;
+    margin: 0.5%;
+    color: #fff;
+}
+
+.title_{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.item {
+    display: flex;
+    margin-bottom: 2%;
+    align-items: center;
+}
+
+.imgcocoa {
+    margin-right: 10px;
+}
+
+.imgcocoa img {
+    width: auto;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 20%;
+}
+
+.inftype p {
+    margin: 0;
 }
 
 span {

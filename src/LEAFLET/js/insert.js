@@ -23,28 +23,21 @@ async function fetchData() {
 
         // Iterar sobre todos os dados e adicioná-los à lista
         data.forEach(item => {
+            // Criar um elemento para cada fornecedor
             const listItem = document.createElement('li');
-
+            // Criar um elemento de span para o nome
+            const nameSpan = document.createElement('span');
+            // Criar um elemento de span para o ID
+            const idSpan = document.createElement('span');
             
-            /*data.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.textContent = item.nome; // Substitua 'nome' pelo nome do campo que você deseja exibir
-            listElement.appendChild(listItem);
-            });*/
+            // Adicionar o nome e o ID ao elemento de span correspondente
+            nameSpan.textContent = `Nome: ${item.nome}`;
+            idSpan.textContent = ` ID: ${item.idFornecedor}`;
+            //const listItem = document.createElement('li');//
 
-            // pega todos os atributos dos objetos
-            for (const key in item) {
-                if (item.hasOwnProperty(key)) {
-                    const attributeItem = document.createElement('span');
-                    if (key == 'senha') {
-                        attributeItem.textContent = key.delete;
-                    } else {
-                        attributeItem.textContent = `${key}: ${item[key]+';'}`;
-                    }
-                    
-                    listItem.appendChild(attributeItem);
-                }
-            }
+            // Adicionar os elementos de span ao item da lista
+            listItem.appendChild(nameSpan);
+            listItem.appendChild(idSpan);
               
             // Adicionar o item à lista
             listElement.appendChild(listItem);
@@ -82,5 +75,3 @@ function savelocal() {
     alert('Cadastro Realizado!');
 
 }
-
-
