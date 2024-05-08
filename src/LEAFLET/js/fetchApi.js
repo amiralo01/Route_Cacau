@@ -5,13 +5,12 @@ async function fetchData() {
         const response = await axios.get('http://[::1]:3000/fornecedors');
         const data = response.data;
                 
-        const listElement = document.querySelector('#fornecedor ul');
+        const listElement = document.querySelector('#fornecedor li');
         // Limpar qualquer conteúdo anterior
         listElement.innerHTML = '';
 
         data.forEach(item => {
             const listItem = document.createElement('li');
-            listeItem.textContent = item.tipo;
 
             listItem.textContent = item.nome; // Substitua 'nome' pelo nome do campo que você deseja exibir
             listElement.appendChild(listItem);
@@ -46,7 +45,7 @@ async function fetchDataRota( cb, idRota ){
     let localidadeOrigem = await getResourceJson('localidades/' +rota?.localidadeOrigem )
     let localidadeFinal = await getResourceJson('localidades/' +rota?.localidadeFinal )
     let tipoCacau = await getResourceJson('/tipo-cacaus?filter=' + JSON.stringify({ where: { idTipo: { inq: rota.rotas_cacau.map(c => c.tipoCacauId) } } }) )
-    let cacau = await getResourceJson('/cacaus?filter=' + JSON.stringify({ where: { idTipo: { inq: rota.rotas_cacau.map(c => c.tipoCacauId) } } }) )
+    let cacau = await getResourceJson('/cacaus?filter=' + JSON.stringify({ where: { idTipo: { inq: rota.rotas_cacau.map(c => c.tipoCacauId) }, rotaId: rota.idRota } }))
     rota.fornecedor = fornecedor;
     rota.tiposCacau = tipoCacau
     rota.cacaus = cacau
@@ -61,7 +60,7 @@ async function fetchDataRota( cb, idRota ){
     typeof cb === 'function' && cb(rota)
 }
 
-fetchData();
+//fetchData();
 
 fetchDataRota(function(rota){
     let fornecedor = rota?.fornecedor

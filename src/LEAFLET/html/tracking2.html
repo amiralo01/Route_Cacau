@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
     <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css">
-    <link rel="stylesheet" href="../css/tracking2.css">
+    <link rel="stylesheet" href="../css/tracking.css">
 
     <script src="../node_modules/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
@@ -38,26 +38,20 @@
                         <div class="titleFrnc">
                             <h1>Fornecedor</h1>
                         </div>
-                        <div class="Image_fornc" id="imagem_fornecedor">
-                            <!--Imagem do Fornecedor-->
+                        <div class="Image_fornc"  id="img">
+                            <img  id="imagem_fornecedor" src="" alt="">
                         </div>
                         <div class="container_fornc">
                             <div class="name_fornc">
                                 <h3>Nome do Fornecedor:</h3>
-                                <div class="Name_forncedor" id="nome_fornecedor">
-                                    <ul>
-                                        <!---Nome do fornecedor-->
-                                    </ul>
-                                </div>
+                                <div class="Name_forncedor" id="nome_fornecedor" disabled ></div>
                             </div>
                         </div>
                         <div class="container2_fornc">
                             <div class="Email_fornc">
                                 <h3>E-mail do Fornecedor:</h3>
                                 <div class="Email_fornecedor" id="email">
-                                    <ul>
-                                        <!---Email do fornecedor-->
-                                    </ul>
+                                
                                 </div>
                             </div>
                             <div class="Data_coleta">
@@ -68,7 +62,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="type">
+                            <div class="type_cacau">
                                 <h3>Tipo de cacau:</h3>
                                 <div class="tipo_de_cacau" id="type">
                                     <ul>
@@ -85,10 +79,7 @@
                     </div>
                     <div class="Localidade">
                         <h3>Localidade Inicial:</h3>
-                        <div class="localidade_do_cacau" id="localidade_origem">
-                            <ul>
-                                <!--Localidade Inicial do Cacau-->
-                            </ul>
+                        <div id="localidade_origem" class="localidade_do_cacau" id="localidade">
                         </div>
                     </div>
                     <div class="LocalidadeIntd">
@@ -99,10 +90,8 @@
                     </div>
                     <div class="LocalidadeF">
                         <h3>Localidade Final:</h3>
-                        <div class="Localidade_F" id="localidade_final">
-                            <ul>
-                                <!--Localidade Final do Cacau-->
-                            </ul>
+                        <div id="localidade_final" class="Localidade_F">
+                        
                         </div>
                     </div>
                 </div>
@@ -110,9 +99,9 @@
         </div>
     </div>
 
-
     <script src="../js/tracking2.js"></script>
     <script src="../js/fetchApi.js"></script>
+    
     <footer>
         <p>&copy; 2023 Rastreamento de Cacau. Todos os direitos reservados.</p>
     </footer>

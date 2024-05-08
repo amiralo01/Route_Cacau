@@ -72,29 +72,3 @@ L.Routing.control({
       L.latLng(coordStore)
     ]
   }).addTo(map);
-
-// Para puxar as informações do banco de dados
-async function fetchData() {
-    try {
-                
-        const response = await axios.get('http://[::1]:3000/fornecedors');
-        const data = response.data;
-                
-        const listElement = document.querySelector('#fornecedor ul');
-        // Limpar qualquer conteúdo anterior
-        listElement.innerHTML = '';
-
-        data.forEach(item => {
-            const listItem = document.createElement('li');
-            listeItem.textContent = item.tipo;
-
-            listItem.textContent = item.nome; // Substitua 'nome' pelo nome do campo que você deseja exibir
-            listElement.appendChild(listItem);
-                    
-        });
-
-    }catch (error) {
-    console.error('Erro ao obter dados do Fornecedor:', error);
-    }
-}
-fetchData();
