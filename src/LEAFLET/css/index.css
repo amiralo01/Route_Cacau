@@ -33,10 +33,22 @@ body {
     right: 10px; 
     width: 80px; 
     height: auto;  
-} 
+}
 
-h1 {
+.Title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5%;
+}
+.Title h1 {
     text-align: center;
+    flex: 1;
+}
+.Title h3 {
+    text-align: center;
+    color:#6e2800;
 }
 
 .header-trackings nav ul {
@@ -45,11 +57,12 @@ h1 {
     margin: 0;
     text-align: center;
     background-color:chocolate;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header-trackings nav li {
-    display: inline-block;
-    margin-right: 10px;
+    text-align: center;
 }
 
 .header-trackings nav a {
@@ -58,35 +71,26 @@ h1 {
     font-weight: bold;
     font-size: 18px;
     transition: color 0.3s ease;
-    display: block; 
-    margin-top: 5px; 
 }
 
 .header-trackings nav a:hover {
     color: #ffcc00;
 }
 
-.carrosel{
-    box-sizing: border-box;
-    box-shadow: 2px 2px 2px 4px black;
-    overflow: hidden;
-    height: 400px;
-    width: 95%;
-    border-radius: calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh) calc(10px + 5vh);
-    margin-right: auto;
-    margin-left: auto;
-}
-.container{
-    box-sizing: border-box;
+.container {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    transform: translateX(0);
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 40%;
+    max-width: 80%;
+    min-height: 60%;
+    margin: 5%;
 }
-.container img{
-    box-sizing: border-box;
-    object-fit: cover;
-    height: 400px;
-    width: 100%;
+
+.carousel {
+    border-radius: 15px; 
+    overflow: hidden; 
 }
 
 .container2 {
