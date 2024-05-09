@@ -25,7 +25,7 @@ export class Localidade extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   cidade: string;
 
