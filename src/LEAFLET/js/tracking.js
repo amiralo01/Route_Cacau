@@ -74,4 +74,3 @@ L.Routing.control({
       L.latLng(coordStore)
     ]
   }).addTo(map);
-
