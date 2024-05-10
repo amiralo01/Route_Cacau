@@ -74,4 +74,29 @@ function savelocal() {
     axios.post('http://[::1]:3000/localidades', local);
     alert('Cadastro Realizado!');
 
+
+}
+
+function savelocInter() {
+    const locInter = {
+        localidadeInter: parseFloat(document.getElementById('Localidade_idLocalidadeInter').value),
+        rota_locInter: parseFloat(document.getElementById('Rota_IdRota').value),
+        
+    };
+    
+    axios.post('http://[::1]:3000/localidade-intermediarias', locInter);
+        alert('Cadastro Realizado!');
+    
+}
+
+function saverota() {
+    const rota = {
+        fornecedorId: parseFloat(document.getElementById('Fornecedor_idFornecedor').value),
+        localidadeOrigem: parseFloat(document.getElementById('Localidade_idLocalidadeOrigem').value),
+        localidadeFinal: parseFloat(document.getElementById('Localidade_idLocalidadeFinal').value)
+    };
+    
+    axios.post('http://[::1]:3000/rotas', rota);
+        alert('Cadastro Realizado!');
+    
 }

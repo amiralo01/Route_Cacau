@@ -44,12 +44,12 @@ async function fetchDataRota( cb, idRota ){
     let fornecedor = await getResourceJson(`fornecedors/${rota?.fornecedorId}`)
     let localidadeOrigem = await getResourceJson('localidades/' +rota?.localidadeOrigem )
     let localidadeFinal = await getResourceJson('localidades/' +rota?.localidadeFinal )
-    let tipoCacau = await getResourceJson('/tipo-cacaus?filter=' + JSON.stringify({ where: { idTipo: { inq: rota.rotas_cacau.map(c => c.tipoCacauId) } } }) )
+    let tipoCacau = await getResourceJson('/tipo-cacaus?filter=' + JSON.stringify({ where: { idTipo: { inq: rota.rotas_cacau.map(c => c.tipoCacauId) }, rotaId: rota.idRota } }) )
     let cacau = await getResourceJson('/cacaus?filter=' + JSON.stringify({ where: { idTipo: { inq: rota.rotas_cacau.map(c => c.tipoCacauId) }, rotaId: rota.idRota } }))
     rota.fornecedor = fornecedor;
     rota.tiposCacau = tipoCacau
     rota.cacaus = cacau
-    const localidadeInter = rota?.rotas_locInter.map(loc => { return loc.idLocalidadeInter; }) 
+    const localidadeInter = rota?.rotas_locInter.map(loc => { return loc.localidadeInter; }) 
     let locoIntermediarias = []
     for(let loc of localidadeInter){
         let _locoIntermediarias = await getResourceJson(`/localidades/${loc}`)

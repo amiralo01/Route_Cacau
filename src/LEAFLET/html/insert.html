@@ -101,7 +101,7 @@
             <div class="cont3">
                 <div class="form-group">
                     <form onsubmit="savelocal(); return true;">
-                        <h2> Cadastro de Localidade Inicial</h2>
+                        <h2> Cadastro de Localidade </h2>
                         <p>Avenida: <input id="avenida" type="text"></p>
                         <p>Bairro: <input id="bairro" type="text"></p>
                         <p>Cidade: <input id="cidade" type="text"></p>
@@ -114,10 +114,11 @@
             </div>
             <div class="cont4">
                 <div class="form-group">
-                    <form onsubmit="savelocal(); return true;">
+                    <form onsubmit="savelocInter(); return true;">
                         <h2> Cadastro de Localidade Intermediária</h2>
-                        <p>RotaId: <input id="Rota_IdRota" type="number"></p>
                         <p>LocalidadeId: <input id="Localidade_idLocalidadeInter" type="number"></p>
+                        <p>RotaId: <input id="Rota_IdRota" type="number"></p>
+                        
                 
                         <div class="button">
                             <input type="submit"/>
@@ -127,12 +128,12 @@
             </div>
             <div class="cont5">
                 <div class="form-group">
-                    <form onsubmit="savelocal(); return true;">
+                    <form onsubmit="saverota(); return true;">
                         <h2> Cadastro da Rota</h2>
+                        <p>Id_Fornecedor: <input id="Fornecedor_idFornecedor" type="number"></p>
                         <p>IdLocalidadeOrigem: <input id="Localidade_idLocalidadeOrigem" type="number"></p>
                         <p>Id_LocalidadeFinal: <input id="Localidade_idLocalidadeFinal" type="number"></p>
-                        <p>Id_Fornecedor: <input id="Fornecedor_idFornecedor" type="number"></p>
-                
+                                        
                         <div class="button">
                             <input type="submit"/>
                         </div>
