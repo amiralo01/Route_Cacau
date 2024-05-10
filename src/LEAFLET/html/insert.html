@@ -29,6 +29,16 @@
         </div> 
     </header>
 
+    <div class="Instructions">
+        <div class="TitleInst">
+            <h1>Bem vindo</h1>
+        </div>
+        <p>Por favor insira as informações abaixo sobre o processo de fornecimento do cacau</p>
+        <p>Assim também como os seus dados também para o processo de rastreamento mais transparente</p>
+        <p>Vale ressaltar que quando inserir o <b>tipo de cacau</b>, preencher pelo id de um dos 3 tipos de cacau descritos abaixo.</p>
+        <p>Desde já, muito obrigado pela sua cooperação.</p>
+    </div>
+
     <div class="container">
 
         <div class="conts">
@@ -36,9 +46,16 @@
                 <div class="fornecedor-group">
                     <form onsubmit="savefornecedor(); return true;">
                         <h2> Cadastro de Fornecedor</h2>
-                        <p>Nome: <input id="nome" type="text"></p>
-                        <p>Email: <input id="email" type="text"></p>
-                        <p>Foto de Perfil: <input id="img" type="text"></p>
+                        <div class="duo">
+                            <div class="texts">
+                                <p>Nome: <input id="nome" type="text"></p>
+                                <p>Email: <input id="email" type="text"></p>
+                                <p>Foto de Perfil: <input id="img" type="text"></p>
+                            </div>
+                            <div class="imgcont">
+                                <img src="https://cdn-icons-png.flaticon.com/512/190/190683.png" alt="frncdimg"/>
+                            </div>
+                        </div>
                 
                         <div class="button">
                             <input type="submit"/>
@@ -51,9 +68,16 @@
                 <div class="form-group">
                     <form onsubmit="savecocoa(); return true;">
                         <h2> Cadastro de Cacaus</h2>
-                        <p>Data da coleta: <input id="dataFab" type="date"></p>
-                        <p>Tipo: <input id="tipoCacauId" type="number"></p>
-                        <p>Rota: <input id="rotaId" type="number"></p>
+                        <div class="duo">
+                            <div class="texts">
+                                <p>Data da coleta: <input id="dataFab" type="date"></p>
+                                <p>Tipo: <input id="tipoCacauId" type="number"></p>
+                                <p>Rota: <input id="rotaId" type="number"></p>
+                            </div>
+                            <div class="imgcont">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5501/5501101.png" alt="cocoaimg"/>
+                            </div>
+                        </div>
                 
                         <div class="button">
                             <input type="submit"/>
@@ -97,11 +121,20 @@
             </div>
         </div>
 
+        <div class="localtitle">
+            <div class="imglocal">
+                <img src="https://cdn-icons-png.flaticon.com/512/500/500745.png" alt="icongps"/>
+            </div>
+            <div class="triple">
+                <h2>[ </h2><h3>Insira as Localidades</h3><h2> ]</h2>
+            </div>
+        </div>
+
         <div class="conts">
             <div class="cont3">
                 <div class="form-group">
                     <form onsubmit="savelocal(); return true;">
-                        <h2> Cadastro de Localidade </h2>
+                        <h2> Cadastro de Localidade</h2>
                         <p>Avenida: <input id="avenida" type="text"></p>
                         <p>Bairro: <input id="bairro" type="text"></p>
                         <p>Cidade: <input id="cidade" type="text"></p>
@@ -117,8 +150,7 @@
                     <form onsubmit="savelocInter(); return true;">
                         <h2> Cadastro de Localidade Intermediária</h2>
                         <p>LocalidadeId: <input id="Localidade_idLocalidadeInter" type="number"></p>
-                        <p>RotaId: <input id="Rota_IdRota" type="number"></p>
-                        
+			<p>RotaId: <input id="Rota_IdRota" type="number"></p>
                 
                         <div class="button">
                             <input type="submit"/>
@@ -130,10 +162,10 @@
                 <div class="form-group">
                     <form onsubmit="saverota(); return true;">
                         <h2> Cadastro da Rota</h2>
-                        <p>Id_Fornecedor: <input id="Fornecedor_idFornecedor" type="number"></p>
+			<p>Id_Fornecedor: <input id="Fornecedor_idFornecedor" type="number"></p>
                         <p>IdLocalidadeOrigem: <input id="Localidade_idLocalidadeOrigem" type="number"></p>
                         <p>Id_LocalidadeFinal: <input id="Localidade_idLocalidadeFinal" type="number"></p>
-                                        
+                
                         <div class="button">
                             <input type="submit"/>
                         </div>

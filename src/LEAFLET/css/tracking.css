@@ -89,6 +89,7 @@ body {
 .titleFrnc,
 .titlelocal{
     text-align: center;
+    margin: 2%;
 }
 .wrapper {
     display: flex;

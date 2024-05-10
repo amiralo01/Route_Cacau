@@ -35,7 +35,7 @@ body {
 .header-main nav ul {
     list-style-type: none;
     padding: 1%;
-    margin-bottom: 4%;
+    margin-bottom: 1%;
     text-align: center;
     background-color:chocolate;
 }
@@ -57,6 +57,28 @@ body {
     color: #ffcc00; 
 }
 
+.TitleInst {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.TitleInst h1 {
+    background: linear-gradient(90deg, #ff8c00, #ffd700); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    margin-bottom: 20px;
+}
+.Instructions {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2%;
+    margin-bottom: 3%; 
+}
+.Instructions p{
+    margin-left: 3%;
+    padding-bottom: 1%;
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
@@ -67,6 +89,29 @@ body {
     align-items: center;
     justify-content: center;
 }
+.duo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.texts, .imgcont {
+    flex: 1;
+}
+.imgcont{
+    border-radius: 50%;
+}
+.imgcont img {
+    margin-top: 1%;
+    width: 40%; 
+    height: auto; 
+}
+
+.imglocal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .cont1, .cont2, .cont3, .cont4, .cont5 {
     flex: 1;
     margin-right: 1%;
@@ -164,6 +209,44 @@ form {
 
 .inftype p {
     margin: 0;
+}
+
+.imglocal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imglocal img {
+    width: auto;
+    height: 50px;
+}
+
+.localtitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    flex-direction: column;
+}
+.localtitle h2{
+    color: #3f9915;
+}
+.localtitle h3{
+    color: #703005;
+}
+
+.triple {
+    display: flex;
+    align-items: center; 
+}
+
+.triple h2:first-child {
+    margin-right: 2px; 
+}
+
+.triple h2:last-child {
+    margin-left: 2px;
 }
 
 .Fornecedor_info {
